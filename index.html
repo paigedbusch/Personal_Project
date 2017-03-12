@@ -7,35 +7,22 @@
 </head>
 <body>
     <div>
-        <header>
-            <div>
-                <nav>
-                    <ul>
-                        <a ui-sref='home'>Home</a>
-                        <a ui-sref='about'>About</a>
-                        <a ui-sref='blog'>Blog</a>
-                        <a ui-sref='tours'>Tours</a>
-                        <a ui-sref='contact'>Contact</a>
-                    </ul>
-                </nav>
-            </div>
-        </header>
         <main>
             <ui-view></ui-view>
         </main>
-        </div>
+    </div>
 
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js'></script>
 <script src='./app.js'></script>
-<script src='./control/aboutCtrl.js'></script>
 <script src='./control/blogCtrl.js'></script>
 <script src='./control/blogEntryCtrl.js'></script>
 <script src='./control/contactCtrl.js'></script>
 <script src='./control/homeCtrl.js'></script>
 <script src='./control/tourCtrl.js'></script>
 <script src='./control/toursCtrl.js'></script>
-<script src='./service/aboutSvc.js'></script>
+<script src='./directive/footerDirective.js'></script>
+<script src='./directive/headerDirective.js'></script>
 <script src='./service/blogEntrySvc.js'></script>
 <script src='./service/blogSvc.js'></script>
 <script src='./service/contactSvc.js'></script>

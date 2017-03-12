@@ -7,11 +7,6 @@ angular.module('app', ['ui.router'])
         templateUrl: './view/home.html',
         controller: 'homeCtrl'
     })
-    .state('about', {
-        url: '/about',
-        templateUrl: './view/about.html',
-        controller: 'aboutCtrl'
-    })
     .state('blog', {
         url: '/blog',
         templateUrl: './view/blog.html',

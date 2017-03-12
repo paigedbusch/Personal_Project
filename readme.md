@@ -1,19 +1,16 @@
 App Title: ???
 Home Page:
     header
-        hamburger menu
-            drop down menu
-                opaque - background, absolute
-                    Home
-                    About
-                    Blog
-                    Tours
-                        Availability
-                        Book Now
-                            Payment Options
-                    Contact
-                        Social Media
-        logo - cairn? mountains?
+        Home
+        About
+        Blog
+        Tours
+            Availability
+            Book Now
+                Payment Options
+        Contact
+            Social Media
+    logo - cairn? mountains?
     carousel of photos
     footer
         social media icons
@@ -25,7 +22,7 @@ About:
     footer
 Blog:
     header
-    ng-repeat li of entries
+    ng-repeat entries
     on-click display blog entry
         with date,
             title,
@@ -52,3 +49,7 @@ Contact:
     phone number
     email address
     social media platforms
+
+ABOUT - Scroll Event:
+    scrollDirective
+    headerDirective - About should be a link
