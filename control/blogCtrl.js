@@ -1,4 +1,5 @@
 angular.module('app')
-.controller('blogCtrl', function($scope) {
+.controller('blogCtrl', function($scope, blogSvc) {
 
+    $scope.bwogs = blogSvc.bwogs;
 });
