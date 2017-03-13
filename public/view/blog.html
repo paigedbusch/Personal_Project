@@ -1,5 +1,7 @@
 <header-directive></header-directive>
-<div class='blog-entries' ng-repeat='bwog in bwogs'>
-    <a class='entry' ui-sref='entry({id: bwog.id})'>{{bwog.title}}</a>
+<div class='blog-entries'>
+    <div ng-repeat='bwog in bwogs'>
+        <a ui-sref='entry({id: bwog.id})'>{{bwog.title}}</a>
+    </div>
 </div>
 <footer-directive></footer-directive>

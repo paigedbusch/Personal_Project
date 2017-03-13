@@ -54,24 +54,54 @@ a:active {
 
 .blog-entries {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .entry {
     display: flex;
 }
 
+.blog-title {
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    /*position: absolute;*/
+}
+
 .tours {
-    border: hidden solid;
     border-radius: 3px;
     background: white;
     height: 300px;
+    width: 100%;
     display: flex;
-    align-content: space-around;
+    align-content: space-between;
 }
 
 .tour-img {
     height: 20vw;
+}
+
+.tour-title {
+    /*display: below the damn picture*/
+}
+
+.place {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .footer {
