@@ -1,0 +1,9 @@
+<header-directive></header-directive>
+<div>
+    Search <input type='text' ng-model='tourFilter'/>
+</div>
+<div class='tours' ng-repeat='pwace in pwaces | filter: tourFilter'>
+    <img class='tour-img' src='{{pwace.img}}'>
+    <a class='tour-title' ui-sref='tour({id: pwace.id})'>{{pwace.place}}</a>
+</div>
+<footer-directive></footer-directive>

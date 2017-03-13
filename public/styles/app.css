@@ -1,0 +1,90 @@
+.navbar {
+    height: 50px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+a:link {
+    text-decoration: none;
+    /*color: white;*/
+}
+
+a:visited {
+    text-decoration: none;
+    color: green;
+}
+
+a:hover {
+    text-decoration: none;
+    color: blue;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.slider {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.profile {
+    height: 300px;
+
+}
+
+.about-text {
+    height: 300px;
+    display: flex;
+    align-self: center;
+}
+
+.blog-entries {
+    display: flex;
+    justify-content: center;
+}
+
+.entry {
+    display: flex;
+}
+
+.tours {
+    border: hidden solid;
+    border-radius: 3px;
+    background: white;
+    height: 300px;
+    display: flex;
+    align-content: space-around;
+}
+
+.tour-img {
+    height: 20vw;
+}
+
+.footer {
+    height: 100px;
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.media {
+    height: 100px;
+    width: 100px;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "personal_project",
+  "version": "1.0.0",
+  "description": "personal project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paigedbusch/Personal_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paigedbusch/Personal_Project/issues"
+  },
+  "homepage": "https://github.com/paigedbusch/Personal_Project#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}

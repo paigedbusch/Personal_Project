@@ -1,55 +1,12 @@
-App Title: ???
-Home Page:
-    header
-        Home
-        About
-        Blog
-        Tours
-            Availability
-            Book Now
-                Payment Options
-        Contact
-            Social Media
-    logo - cairn? mountains?
-    carousel of photos
-    footer
-        social media icons
-About:
-    header
-    photo of Mom
-    'about me' paragraph
-    link to blog page
-    footer
-Blog:
-    header
-    ng-repeat entries
-    on-click display blog entry
-        with date,
-            title,
-            photo,
-            body,
-            signature
-    footer
-Tours:
-    header
-    ng-repeat divs
-    clickable photos
-        titles above or below photo
-    on-click display more photos
-    information regarding tour
-    available dates button
-        display calendar with key
-        on-click choose dates
-        book bow button
-            payment screen
-    footer
-Contact:
-    header
-    available days and times
-    phone number
-    email address
-    social media platforms
-
-ABOUT - Scroll Event:
-    scrollDirective
-    headerDirective - About should be a link
+NEED:
+Title
+Logo
+Picture Slider
+Available Dates
+Book Now
+Payment Options
+    Stripe(node)
+Node
+    Create Blog Entries
+SQL
+    Foreign Key
