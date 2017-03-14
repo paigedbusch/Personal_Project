@@ -9,6 +9,7 @@ var conn = massive.connectSync({
 });
 
 var app = module.exports = express();
+app.use(bodyParser.json());
 
 app.set('db', conn);
 
