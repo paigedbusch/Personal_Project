@@ -31,9 +31,23 @@ angular.module('app', ['ui.router'])
         url: '/contact',
         templateUrl: './view/contact.html',
         controller: 'contactCtrl'
+    })
+    .state('admin', {
+        url: '/admin',
+        templateUrl: './view/admin.html',
+        controller: 'adminCtrl'
+    })
+    .state('newBlog', {
+        url: '/newBlog',
+        templateUrl: './view/newBlog.html',
+        controller: 'newBlogCtrl'
+    })
+    .state('newTour', {
+        url: '/newTour',
+        templateUrl: './view/newTour.html',
+        controller: 'newTourCtrl'
     });
 
     $urlRouterProvider
     .otherwise('/home');
-
 });

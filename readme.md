@@ -1,6 +1,5 @@
 NEED:
 Logo
-Login
 Picture Slider
 Blog Photos
 Tour Photos
@@ -13,3 +12,19 @@ Node
     Create Tours
 SQL
     Foreign Key
+
+IDEAS:
+//
+SQL:
+    Primary Key
+        User
+    Foreign Key
+        Blog Post
+        Tour Post
+Local Auth
+Template for New Posts
+//
+Email Template to Book
+//
+Amazon S3
+    Image URL on Create Form
