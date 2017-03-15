@@ -32,10 +32,10 @@ angular.module('app', ['ui.router', 'ui.bootstrap'])
         templateUrl: './view/contact.html',
         controller: 'contactCtrl'
     })
-    .state('admin', {
-        url: '/admin',
-        templateUrl: './view/admin.html',
-        controller: 'adminCtrl'
+    .state('login', {
+        url: '/login',
+        templateUrl: './view/login.html',
+        controller: 'loginCtrl'
     })
     .state('newBlog', {
         url: '/newBlog',

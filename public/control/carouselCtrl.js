@@ -1,5 +1,6 @@
-angular.module('app').controller('carouselCtrl', function($scope) {
-    $scope.myInterval = 5000;
+angular.module('app')
+.controller('carouselCtrl', function($scope) {
+    $scope.myInterval = 3000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
     var slides = $scope.slides = [];
@@ -7,7 +8,7 @@ angular.module('app').controller('carouselCtrl', function($scope) {
 
     $scope.slides = [
         {
-            image: '../image/about_img.jpg',
+            image: '../image/timp4.jpg',
             id: currIndex++
         },
         {
@@ -22,6 +23,10 @@ angular.module('app').controller('carouselCtrl', function($scope) {
             image: '../image/wave_1.jpg',
             id: currIndex++
         },
+        {
+            image: '../image/narrows1.jpg',
+            id: currIndex++
+        }
     ]
 
     $scope.addSlide = function() {

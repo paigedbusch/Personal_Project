@@ -30,13 +30,20 @@ passport.use(new localStrategy(function(username, password, done) {
 
 app.set('db', conn);
 
+var blogCtrl = require('./blogCtrl');
+var tourCtrl = require('./tourCtrl');
+var userCtrl = require('./userCtrl');
+
 app.use(express.static('../public'));
 app.use(bodyParser.json());
 
-// app.get(blog);
-// app.get(tours);
+app.get('/url', blogCtrl/tourCtrl/userCtrl.functionName);
 
-// app.post(new blog);
+app.post('/url', blogCtrl/tourCtrl/userCtrl.functionName);
+
+app.put('/url', blogCtrl/tourCtrl/userCtrl.functionName);
+
+app.delete('/url', blogCtrl/tourCtrl/userCtrl.functionName);
 
 app.listen(port, function() {
     console.log('Listening on port ', port);
