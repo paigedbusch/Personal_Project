@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/paigedbusch/Personal_Project#readme",
   "dependencies": {
+    "angular-animate": "^1.6.3",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-carousel": "^0.1.4",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "massive": "^2.6.0"
+    "massive": "^2.6.0",
+    "passport-local": "^1.0.0"
   }
 }

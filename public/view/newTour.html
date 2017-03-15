@@ -1,10 +1,21 @@
-<form>
-  Title:<br>
-  <input type='text' name='title'><br>
-  Content:<br>
-  <input type='text' name='content'><br>
-  Required Gear:<br>
-  <input type='text' name='gear'><br>
-  Pricing:<br>
-  <input type='text' name='pricing'>
+<form action='/tours' method='post'>
+  <div>
+    <label>Title:</label>
+    <input type='text' name='title'/>
+  </div>
+  <div>
+    <label>Content:</label>
+    <input type='text' name='content'/>
+  </div>
+  <div>
+    <label>Required Gear:</label>
+    <input type='text' name='gear'/>
+  </div>
+  <div>
+    <label>Pricing:</label>
+    <input type='text' name='pricing'/>
+  </div>
+  <div>
+    <input type='submit' value='New Tour'/>
+  </div>
 </form>
