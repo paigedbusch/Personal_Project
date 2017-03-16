@@ -1,21 +1,24 @@
 var app = require('../server');
+var db = app.get('db');
 
 module.exports = {
-    get: function() {
-        var db = app.get('db');
+    get: function(req, res) {
         db.get_blogs(function(err, blogs) {
-            res.send(blogs);
+            if (err) {
+                console.log(err)
+            } else {
+             
+            res.send(blogs);   
+            }
         });
     },
     create: function() {
-        var db = app.get('db');
         db.create_blog([req.body.title, req.body.content, req.body.image], function(err, blogs) {
             blogs.push(req.body);
             res.send(blogs);
         });
     },
     update: function() {
-        var db = app.get('db');
         db.update_blog(function(err, blogs) {
             for (var i = 0; i < blogs.length; i++) {
                 if (req.body.id === blogs[i].id) {
@@ -26,7 +29,6 @@ module.exports = {
         });
     },
     delete: function() {
-        var db = app.get('db');
         db.delete_blog(function(err, blogs) {
             for (var i = 0; i < blogs.length; i++) {
                 if (req.body.id === blogs[i].id)  {

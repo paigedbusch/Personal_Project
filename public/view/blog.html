@@ -1,7 +1,7 @@
 <header-directive></header-directive>
 <div class='blog-entries'>
-    <div ng-repeat='bwog in bwogs'>
-        <a ui-sref='entry({id: bwog.id})'>{{bwog.title}}</a>
+    <div ng-repeat='entry in entries'>
+        <a ui-sref='entry({id: entry.id})'>{{entry.title}}</a>
     </div>
 </div>
 <footer-directive></footer-directive>

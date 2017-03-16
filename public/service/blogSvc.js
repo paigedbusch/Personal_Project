@@ -1,5 +1,5 @@
 angular.module('app')
-.service('blogSvc', function($stateParams) {
+.service('blogSvc', function($stateParams, $http) {
     
     this.bwogs = [{
         title: 'blog1',
@@ -25,3 +25,10 @@ angular.module('app')
         }
     };
 });
+
+this.getAllEntries = function() {
+    return $http('/api/blog').then(function(response) {
+        console.log('service something')
+        return response;
+    });
+}
