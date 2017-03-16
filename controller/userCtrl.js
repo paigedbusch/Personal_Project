@@ -1,6 +1,9 @@
 var app = require('../server');
 
 module.exports = {
+    get: function() {
+        var db = app.get('db');
+    },
     create: function() {
         var db = app.get('db');
     },

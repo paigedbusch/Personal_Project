@@ -1,10 +1,13 @@
 var express = require('express');
-// var session = require('express-session');
+var session = require('express-session');
 var bodyParser = require('body-parser');
 var massive = require('massive');
 var cors = require('cors');
-// var passport = require('passport');
-// var localStrategy = require('passport-local').Strategy;
+var passport = require('passport');
+var localStrategy = require('passport-local').Strategy;
+// var userCtrl = require('./userCtrl');
+var tourCtrl = require('./controller/tourCtrl');
+var blogCtrl = require('./controller/blogCtrl');
 var port = 8080;
 
 var app = module.exports = express();
@@ -24,60 +27,58 @@ var config = require('./config');
      else console.log('All tables successfully reset');
    });
   }
- )
+ );
 
+// app.get('/url', blogCtrl.get);
+// app.get('/url', tourCtrl.get);
+
+// app.post('/url', blogCtrl.create);
+// app.post('/url', tourCtrl.create);
+
+// app.put('/url', blogCtrl.update);
+// app.put('/url', tourCtrl.update);
+
+// app.delete('/url', blogCtrl.delete);
+// app.delete('/url', tourCtrl.delete);
 
 app.listen(port, function() {
     console.log('Listening on port ', port);
 });
 
 
-// var db = app.get('db');
-// var conn = massive.connectSync({
-//   connectionString : config.elephantsql
-// });
+var db = app.get('db');
+var conn = massive.connectSync({
+  connectionString : config.elephantsql
+});
 
-// const blogCtrl = require('./controller/blogCtrl');
-// const tourCtrl = require('./controller/tourCtrl');
-// const userCtrl = require('./controller/userCtrl');
-
-
-// app.use(session({
-//   resave: true, //Without this you get a constant warning about default values
-//   saveUninitialized: true, //Without this you get a constant warning about default values
-//   secret: 'keyboardcat'
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({
+  resave: true, //Without this you get a constant warning about default values
+  saveUninitialized: true, //Without this you get a constant warning about default values
+  secret: 'keyboardcat'
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
-// app.set('db', conn);
+app.set('db', conn);
 
-// passport.use(new localStrategy(function(username, password, done) {
-//   db.users.findOne({username: username}, function(err, user) {
-//     if (err) {
-//       return done(err);
-//     }
-//     if (!user) {
-//       return done(null, false, {message: 'Incorrect username'});
-//     }
-//     if (user.password !== password) {
-//       return done(null, false, {message: 'Incorrect password'});
-//     }
-//     return done(null, user);
-//   });
-// }));
+passport.use(new localStrategy(function(username, password, done) {
+  db.users.findOne({username: username}, function(err, user) {
+    if (err) {
+      return done(err);
+    }
+    if (!user) {
+      return done(null, false, {message: 'Incorrect username'});
+    }
+    if (user.password !== password) {
+      return done(null, false, {message: 'Incorrect password'});
+    }
+    return done(null, user);
+  });
+}));
 
-// app.post('/login',
-//   passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login'}), function(req, res) {
-//     res.status(200).json(req.user);
-//   }
-// );
-
-// app.get('/url', blogCtrl/tourCtrl/userCtrl.functionName);
-
-// app.post('/url', blogCtrl/tourCtrl/userCtrl.functionName);
-
-// app.put('/url', blogCtrl/tourCtrl/userCtrl.functionName);
-
-// app.delete('/url', blogCtrl/tourCtrl/userCtrl.functionName);
+app.post('/login',
+  passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login'}), function(req, res) {
+    res.status(200).json(req.user);
+  }
+);
