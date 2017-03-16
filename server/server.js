@@ -3,7 +3,6 @@ var bodyParser = require('body-parser');
 var massive = require('massive');
 var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
-var carousel = require('angular-ui-carousel');
 
 var port = 8080;
 
@@ -30,20 +29,20 @@ passport.use(new localStrategy(function(username, password, done) {
 
 app.set('db', conn);
 
-var blogCtrl = require('./blogCtrl');
-var tourCtrl = require('./tourCtrl');
-var userCtrl = require('./userCtrl');
+var blogCtrl = require('./controller/blogCtrl');
+var tourCtrl = require('./controller/tourCtrl');
+var userCtrl = require('./controller/userCtrl');
 
 app.use(express.static('../public'));
 app.use(bodyParser.json());
 
-app.get('/url', blogCtrl/tourCtrl/userCtrl.functionName);
+// app.get('/url', blogCtrl/tourCtrl/userCtrl.functionName);
 
-app.post('/url', blogCtrl/tourCtrl/userCtrl.functionName);
+// app.post('/url', blogCtrl/tourCtrl/userCtrl.functionName);
 
-app.put('/url', blogCtrl/tourCtrl/userCtrl.functionName);
+// app.put('/url', blogCtrl/tourCtrl/userCtrl.functionName);
 
-app.delete('/url', blogCtrl/tourCtrl/userCtrl.functionName);
+// app.delete('/url', blogCtrl/tourCtrl/userCtrl.functionName);
 
 app.listen(port, function() {
     console.log('Listening on port ', port);

@@ -1,4 +1,4 @@
-var app = require('./server');
+var app = require('../server');
 
 module.exports = {
     create: function() {
