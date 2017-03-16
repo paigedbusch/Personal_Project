@@ -1,11 +1,11 @@
-<form action='/admin' method='post'>
+<form ng-submit='submitLogin(login)'>
   <div>
     <label>Username:</label>
-    <input type='text' name='username'/>
+    <input type='text' name='username' ng-model='login.username'/>
   </div>
   <div>
     <label>Password:</label>
-    <input type='text' name='password'/>
+    <input type='password' name='password' ng-model='login.password'/>
   </div>
   <div>
     <input type='submit' value='Log In'/>
