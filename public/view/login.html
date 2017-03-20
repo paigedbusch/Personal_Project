@@ -1,4 +1,4 @@
-<form ng-submit='submit()'>
+<form ng-submit='submitLogin(login)'>
   <div>
     <label>Username:</label>
     <input type='text' name='username' ng-model='login.username'/>
@@ -8,6 +8,6 @@
     <input type='password' name='password' ng-model='login.password'/>
   </div>
   <div>
-    <input type='submit' value='Log In'/>
+	  <button>Login</button>
   </div>
 </form>

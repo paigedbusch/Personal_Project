@@ -3,8 +3,8 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var massive = require('massive');
 var cors = require('cors');
-// var passport = require('passport');
-// var localStrategy = require('passport-local').Strategy;
+var passport = require('passport');
+var localStrategy = require('passport-local').Strategy;
 
 var port = 8080;
 
@@ -27,7 +27,7 @@ db.set_tables(function(err, res) {
 
 tourCtrl = require('./controller/tourCtrl');
 blogCtrl = require('./controller/blogCtrl');
-// userCtrl = require('./userCtrl');
+// userCtrl = require('./controller/userCtrl');
 
 app.get('/api/blog', blogCtrl.get);
 app.get('/api/blog/:id', blogCtrl.getOne);
@@ -47,31 +47,62 @@ app.listen(port, function() {
     console.log('Listening on port ', port);
 });
 
-// app.use(session({
-//   resave: true, //Without this you get a constant warning about default values
-//   saveUninitialized: true, //Without this you get a constant warning about default values
-//   secret: 'keyboardcat'
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({
+  resave: true,
+  saveUninitialized: false,
+  secret: 'keyboardcat'
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-// passport.use(new localStrategy(function(username, password, done) {
-//   db.users.findOne({username: username}, function(err, user) {
-//     if (err) {
-//       return done(err);
-//     }
-//     if (!user) {
-//       return done(null, false, {message: 'Incorrect username'});
-//     }
-//     if (user.password !== password) {
-//       return done(null, false, {message: 'Incorrect password'});
-//     }
-//     return done(null, user);
-//   });
-// }));
+passport.use('local', new localStrategy(function(username, password, done) {
+  db.users.findOne({username: username}, function(err, user) {
+    if (err) {
+      return done(err);
+    }
+    if (!user) {
+      return done(null, false, {message: 'Incorrect username'});
+    }
+    if (user.password !== password) {
+      return done(null, false, {message: 'Incorrect password'});
+    }
+    return done(null, user);
+  });
+}));
 
-// app.post('/login',
-//   passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login'}), function(req, res) {
-//     res.status(200).json(req.user);
-//   }
-// );
+passport.serializeUser(function(user, done) {
+  return done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  return done(null, user);
+});
+
+app.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+app.get('/auth/me', function(req, res) {
+  if (req.user) {
+    console.log(req.user);
+    res.status(200).send(req.user);
+  } else {
+    console.log('no user')
+    res.status(200).send();
+  }
+});
+
+app.post('/login',
+  passport.authenticate('local', {successRedirect: '/home', failureRedirect: '/login'}), function(req, res) {
+    res.status(200).send(req.user);
+  }
+);
+
+function isAuthed(req, res, next) {
+  if (req.user) {
+    next();
+  } else {
+    res.status(403).send({message: 'Access Denied'});
+  }
+};
