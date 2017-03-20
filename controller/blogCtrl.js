@@ -23,13 +23,8 @@ module.exports = {
         });
     },
     update: function(req, res) {
-        db.update_blog(function(err, blogs) {
-            for (var i = 0; i < blogs.length; i++) {
-                if (req.body.id === blogs[i].id) {
-                    blogs[i] = req.body;
-                }
-            }
-            res.send(blogs);
+        db.update_blog(req.body.id, req.body.title, req.body.content, req.body.image, function(err, blogs) {
+            res.send(blogs[0]);
         });
     },
     delete: function(req, res) {

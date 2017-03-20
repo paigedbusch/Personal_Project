@@ -1,3 +1,4 @@
 update blogs
-set title = , content = , image = 
-where id = $1, $2, $3;
+set title = $2, content = $3, image = $4
+where id = $1
+returning *

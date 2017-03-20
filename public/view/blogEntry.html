@@ -1,8 +1,25 @@
 <header-directive></header-directive>
-<div class='blog-container'>
+
+<form ng-show='editing'>
+  <div>
+    <label>Title:</label>
+    <input type='text' name='title' ng-model='entry.title'/>
+  </div>
+  <div>
+    <label>Content:</label>
+    <textarea type='text' name='content' ng-model='entry.content'></textarea>
+  </div>
+  <button ng-click='updateEntry(entry)'>Submit</button>
+  <button ng-click='editing = false'>Cancel</button>
+</form>
+
+<div class='blog-container' ng-show='!editing'>
     <h1 class='blog-title'>{{entry.title}}</h1>
     <p class='info'>{{entry.content}}</p>
     <!--<p>Read about the available tours for {{entry.title}} <a href='./tours/:id'>here</a>.</p>-->
 </div>
-<button ng-click='deleteEntry()'>Delete Entry</button>
+
+<button ng-click='deleteEntry()' ng-show='!editing'>Delete Entry</button>
+<button ng-click='editing = true' ng-show='!editing'>Edit</button>
+
 <footer-directive></footer-directive>

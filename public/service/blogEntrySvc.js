@@ -8,13 +8,12 @@ angular.module('app')
         });
     };
 
-    // this.updateEntry = function() {
-    //     return $http.update('/api/update_blog')
-    //     .then(function(response) {
-    //         console.log('blog updated');
-    //         return response.data;
-    //     });
-    // };
+    this.updateEntry = function(entry) {
+        return $http.put('/api/update_blog', entry)
+        .then(function(response) {
+            return response.data;
+        });
+    };
     
     this.deleteEntry = function() {
         return $http.delete('/api/delete_blog/' + $stateParams.id)
