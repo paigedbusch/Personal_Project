@@ -20,20 +20,20 @@ var conn = massive.connectSync({connectionString: config.elephantsql})
 app.set('db', conn);
 var db = app.get('db');
 
-tourCtrl = require('./controller/tourCtrl');
+// tourCtrl = require('./controller/tourCtrl');
 blogCtrl = require('./controller/blogCtrl');
 // userCtrl = require('./userCtrl');
 
 app.get('/api/blog', blogCtrl.get);
 app.get('/api/blog/:id', blogCtrl.getOne);
-app.get('/api/tours', tourCtrl.get);
+// app.get('/api/tours', tourCtrl.get);
 // app.get('/api/tours/:id', tourCtrl.getOne);
 
 app.post('/api/new_blog', blogCtrl.create);
-app.post('/api/new_tour', tourCtrl.create);
+// app.post('/api/new_tour', tourCtrl.create);
 
 app.put('/api/update_blog', blogCtrl.update);
-app.put('/api/update_tour', tourCtrl.update);
+// app.put('/api/update_tour', tourCtrl.update);
 
 app.delete('/api/delete_blog/:id', blogCtrl.delete);
 // app.delete('/api/delete_tour', tourCtrl.delete);

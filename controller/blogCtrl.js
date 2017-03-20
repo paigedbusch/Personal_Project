@@ -18,8 +18,7 @@ module.exports = {
     },
     create: function(req, res) {
         db.create_blog([req.body.title, req.body.content, req.body.image], function(err, blogs) {
-            blogs.push(req.body);
-            res.send(blogs);
+            res.send(blogs[0]);
         });
     },
     update: function(req, res) {

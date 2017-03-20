@@ -1,7 +1,24 @@
 <header-directive></header-directive>
-<div class='blog-entries'>
+
+<div class='blog-entries' ng-show='!create'>
     <div ng-repeat='entry in entries'>
         <a ui-sref='entry({id: entry.id})'>{{entry.title}}</a>
     </div>
+
+    <button ng-click='create = true' ng-show='!create'>Create New</button>
 </div>
+
+    <form ng-show='create'>
+        <div>
+            <label>Title:</label>
+            <input type='text' name='title' ng-model='entry.title'/>
+        </div>
+        <div>
+            <label>Content:</label>
+            <textarea type='text' name='content' ng-model='entry.content'></textarea>
+        </div>
+        <button ng-click='createEntry(entry)'>Submit</button>
+        <button ng-click='create = false'>Cancel</button>
+    </form>
+
 <footer-directive></footer-directive>
