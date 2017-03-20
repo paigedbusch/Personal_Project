@@ -24,11 +24,11 @@ angular.module('app')
             }
         }
     };
+    
+    this.getAllEntries = function() {
+        return $http.get('/api/blog')
+        .then(function(response) {
+            return response.data;
+        });
+    };
 });
-
-this.getAllEntries = function() {
-    return $http('/api/blog').then(function(response) {
-        console.log('service something')
-        return response;
-    });
-}

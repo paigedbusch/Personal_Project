@@ -1,3 +1,3 @@
 update blogs
-set content = 
-where id = ;
+set title = , content = , image = 
+where id = $1, $2, $3;

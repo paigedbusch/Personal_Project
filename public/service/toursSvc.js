@@ -1,5 +1,5 @@
 angular.module('app')
-.service('toursSvc', function($stateParams) {
+.service('toursSvc', function($stateParams, $http) {
     
     this.pwaces = [{
         place: 'The Wave',
@@ -26,5 +26,13 @@ angular.module('app')
                 return this.pwaces[i];
             }
         }
+    };
+
+    this.getAllTours = function() {
+        return $http.get('/api/tours')
+        .then(function(response) {
+            console.log('tours svc working');
+            return response.data;
+        });
     };
 });

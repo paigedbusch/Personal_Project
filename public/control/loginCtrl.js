@@ -5,6 +5,6 @@ angular.module('app')
         debugger;
         loginSvc.submitLogin(user).then(function(response) {
             console.log(response);
-        })
-    }
+        });
+    };
 });

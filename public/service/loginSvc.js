@@ -8,6 +8,6 @@ angular.module('app')
             data: user
         }).then(function(response) {
             return response.data;
-        })
-    } 
+        });
+    }; 
 });

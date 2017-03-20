@@ -12,7 +12,7 @@ const app = module.exports = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use('/', express.static( __dirname + './public'));
+app.use(express.static( __dirname + '/public'));
 
 var config = require('./config');
 
@@ -25,16 +25,18 @@ blogCtrl = require('./controller/blogCtrl');
 // userCtrl = require('./userCtrl');
 
 app.get('/api/blog', blogCtrl.get);
-// app.get('/tours', tourCtrl.get);
+app.get('/api/blog/:id', blogCtrl.getOne);
+app.get('/api/tours', tourCtrl.get);
+// app.get('/api/tours/:id', tourCtrl.getOne);
 
-// app.post('/api/', blogCtrl.create);
-// app.post('/url', tourCtrl.create);
+app.post('/api/new_blog', blogCtrl.create);
+app.post('/api/new_tour', tourCtrl.create);
 
-// app.put('/url', blogCtrl.update);
-// app.put('/url', tourCtrl.update);
+app.put('/api/update_blog', blogCtrl.update);
+app.put('/api/update_tour', tourCtrl.update);
 
-// app.delete('/url', blogCtrl.delete);
-// app.delete('/url', tourCtrl.delete);
+app.delete('/api/delete_blog/:id', blogCtrl.delete);
+// app.delete('/api/delete_tour', tourCtrl.delete);
 
 app.listen(port, function() {
     console.log('Listening on port ', port);
