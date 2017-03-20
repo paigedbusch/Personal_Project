@@ -1,19 +1,24 @@
 angular.module('app')
-.service('tourSvc', function($http) {
+.service('tourSvc', function($http, $stateParams) {
 
-    this.updateTour = function(id, dummyBlog)  {
-        return $http.put('/api/update_tour/' + id, dummyBlog)
+    this.getTour = function() {
+        return $http.get('/api/tours/' + $stateParams.id)
         .then(function(response) {
-            console.log('tour updated');
             return response.data;
         });
     };
 
-    // this.deleteTour = function() {
-    //     return $http.delete('/api/delete_tour')
-    //     .then(function(response) {
-    //         console.log('tour deleted');
-    //         return response.data;
-    //     });
-    // };
+    this.updateTour = function(tour) {
+        return $http.put('/api/update_tour', tour)
+        .then(function(response) {
+            return response.data;
+        });
+    };
+    
+    this.deleteTour = function() {
+        return $http.delete('/api/delete_tour/' + $stateParams.id)
+        .then(function(response) {
+            return response.data;
+        });
+    };
 });

@@ -1,11 +1,15 @@
 angular.module('app')
-.controller('toursCtrl', function($scope, toursSvc) {
-
-    $scope.pwaces = toursSvc.pwaces;
+.controller('toursCtrl', function($scope, toursSvc, $state) {
 
     toursSvc.getAllTours()
     .then(function(response) {
-        console.log('tour ctrl working');
-        $scope.tours = response.data;
+        $scope.tours = response;
     });
+
+    $scope.createTour = function(tour) {
+        toursSvc.newTour(tour)
+        .then(function(response) {
+            $state.go('tour', {id: response.id});
+        });
+    };
 });

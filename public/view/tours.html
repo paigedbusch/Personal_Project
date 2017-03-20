@@ -1,11 +1,36 @@
 <header-directive></header-directive>
+
 <div class='search'>
-    Search <input type='text' ng-model='tourFilter.place'/>
+    Search <input type='text' ng-model='tourFilter.title'/>
 </div>
-<div class='tours'>
-    <div ng-repeat='pwace in pwaces | filter: tourFilter'>
-        <img class='tour-img' src='{{pwace.img}}'>
-        <a class='tour-title' ui-sref='tour({id: pwace.id})'>{{pwace.place}}</a>
+
+<div class='tours' ng-show='!create'>
+    <div ng-repeat='tour in tours | filter: tourFilter'>
+        <img class='tour-img' src='{{tour.image}}'>
+        <a class='tour-title' ui-sref='tour({id: tour.id})'>{{tour.title}}</a>
     </div>
+    <button ng-click='create = true' ng-show='!create'>Create New</button>
 </div>
+
+<form ng-show='create'>
+    <div>
+        <label>Title:</label>
+        <input type='text' name='title' ng-model='tour.title'/>
+    </div>
+    <div>
+        <label>Content:</label>
+        <textarea type='text' name='content' ng-model='tour.content'></textarea>
+    </div>
+    <div>
+        <label>Gear:</label>
+        <textarea type='text' name='gear' ng-model='tour.gear'></textarea>
+    </div>
+    <div>
+        <label>Price:</label>
+        <input type='text' name='price' ng-model='tour.price'/>
+    </div>
+    <button ng-click='createTour(tour)'>Submit</button>
+    <button ng-click='create = false'>Cancel</button>
+</form>
+
 <footer-directive></footer-directive>

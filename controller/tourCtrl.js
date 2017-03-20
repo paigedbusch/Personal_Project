@@ -2,39 +2,32 @@ var app = require('../server');
 var db = app.get('db');
 
 module.exports = {
-    get: function() {
+    get: function(req, res) {
         db.get_tours(function(err, tours) {
             if (err) {
                 console.log(err);
             } else {
                 res.send(tours);
             }
-            res.send(tours);
         });
     },
-    create: function() {
+    getOne: function(req, res) {
+        db.get_tours([req.params.id], function(err, tours) {
+            res.json(tours[0]);
+        });
+    },
+    create: function(req, res) {
         db.create_tour([req.body.title, req.body.content, req.body.gear, req.body.price, req.body.image], function(err, tours) {
-            tours.push(req.body);
-            res.send(tours);
+            res.send(tours[0]);
         });
     },
-    update: function() {
-        db.update_tour(function(err, tours) {
-            for (var i = 0; i < tours.length; i++) {
-                if (req.body.id === tours[i].id) {
-                    tours[i] = req.body;
-                }
-            }
-            res.send(tours);
+    update: function(req, res) {
+        db.update_tour(req.body.id, req.body.title, req.body.content, req.body.gear, req.body.price, req.body.image, function(err, tours) {
+            res.send(tours[0]);
         });
     },
-    delete: function() {
-        db.delete_tour(function(err, tours) {
-            for (var i = 0; i < tours.length; i++) {
-                if (req.body.id === tours[i].id) {
-                    delete tours[i];
-                }
-            }
+    delete: function(req, res) {
+        db.delete_tour(req.params.id, function(err, tours) {
             res.send(tours);
         });
     }

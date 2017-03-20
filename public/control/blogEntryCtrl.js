@@ -2,7 +2,6 @@ angular.module('app')
 .controller('blogEntryCtrl', function($scope, blogEntrySvc, $state) {
 
     $scope.editing = false;
-    //$scope.entry = blogSvc.getEntry();
 
     blogEntrySvc.getEntry()
     .then(function(response) {

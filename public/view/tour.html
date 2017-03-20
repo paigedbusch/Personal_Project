@@ -1,8 +1,34 @@
 <header-directive></header-directive>
-<div class='tour-container'>
-    <h1 class='place'>{{tour.place}}</h1>
-    <p class='info'>{{tour.body}}</p>
+
+<form ng-show='updating'>
+  <div>
+    <label>Title:</label>
+    <input type='text' name='title' ng-model='tour.title'/>
+  </div>
+  <div>
+    <label>Content:</label>
+    <textarea type='text' name='content' ng-model='tour.content'></textarea>
+  </div>
+  <div>
+      <label>Gear:</label>
+      <textarea type='text' name='gear' ng-model='tour.gear'></textarea>
+  </div>
+  <div>
+      <label>Price:</label>
+      <input type='text' name='price' ng-model='tour.price'/>
+  </div>
+  <button ng-click='updateTour(tour)'>Submit</button>
+  <button ng-click='updating = false'>Cancel</button>
+</form>
+
+<div class='tour-container' ng-show='!updating'>
+    <h1 class='place'>{{tour.title}}</h1>
+    <p class='info'>{{tour.content}}</p>
+    <p>{{tour.gear}}</p>
+    <p>{{tour.price}}</p>
 </div>
-<button class='button'>Available Dates</button>
-<!--<button ng-click='updateTour(tour.id)'>Update</button>-->
+
+<button ng-click='deleteTour()' ng-show='!updating'>Delete Tour</button>
+<button ng-click='updating = true' ng-show='!updating'>Edit</button>
+
 <footer-directive></footer-directive>

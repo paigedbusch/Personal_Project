@@ -1,3 +1,4 @@
 update tours
-set title = , content = , gear = , prices = , image = 
-where id = $1, $2, $3, $4, $5;
+set title = $2, content = $3, gear = $4, price = $5, image = $6
+where id = $1
+returning *

@@ -36,16 +36,6 @@ angular.module('app', ['ui.router', 'ui.bootstrap'])
         url: '/login',
         templateUrl: './view/login.html',
         controller: 'loginCtrl'
-    })
-    .state('newBlog', {
-        url: '/newBlog',
-        templateUrl: './view/newBlog.html',
-        controller: 'newBlogCtrl'
-    })
-    .state('newTour', {
-        url: '/newTour',
-        templateUrl: './view/newTour.html',
-        controller: 'newTourCtrl'
     });
 
     $urlRouterProvider

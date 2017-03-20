@@ -29,7 +29,11 @@ create table tours
 );
 
 insert into tours (title, content, gear, prices, image) values
-('title', 'content', 'gear', 'prices', 'image')
+('tour1', 'some content for the first tour', 'gear necessary for the first tour', '$1.00', 'image url first tour')
+('tour2', 'some content for the second tour', 'gear necessary for the second tour', '$1.00', 'image url second tour')
+('tour3', 'some content for the third tour', 'gear necessary for the third tour', '$1.00', 'image url third tour')
+('tour4', 'some content for the fourth tour', 'gear necessary for the fourth tour', '$1.00', 'image url fourth tour')
+('tour5', 'some content for the fifth tour', 'gear necessary for the fifth tour', '$1.00', 'image url fifth tour')
 
 create table users
 (

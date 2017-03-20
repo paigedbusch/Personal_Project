@@ -3,7 +3,7 @@ angular.module('app')
 
     blogSvc.getAllEntries()
     .then(function(response) {
-        $scope.entries = response; //creating a var on $scope called entries
+        $scope.entries = response;
     });
 
     $scope.createEntry = function(entry) {

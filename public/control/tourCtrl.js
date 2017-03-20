@@ -1,26 +1,25 @@
 angular.module('app')
-.controller('tourCtrl', function($scope, toursSvc) {
+.controller('tourCtrl', function($scope, toursSvc, $state) {
 
-    $scope.tour = toursSvc.getTour();
+    $scope.updating = false;
 
-    var dummyBlog = {
-        title: 'This is a new blog',
-        content: 'This is some content',
-        image: 'This is an image'
-    };
+    toursSvc.getTour()
+    .then(function(response) {
+        $scope.tour = response;
+    });
 
-
-    $scope.updateTour = function() {
-        tourSvc.updateTour(1, dummyBlog)
+    $scope.updateTour = function(tour) {
+        toursSvc.updateTour(tour)
         .then(function(response) {
-            console.log('tour ctrl working a');
-            $scope.tour = response.data;
+            $scope.tour = response;
+            $scope.updating = false;
         });
     };
 
-    // tourSvc.deleteTour()
-    // .then(function(response) {
-    //     console.log('tour ctrl working');
-    //     $scope.tour = response.data;
-    // });
+    $scope.deleteTour = function() {
+        toursSvc.deleteTour()
+        .then(function(response) {
+            $state.go('tours');
+        });
+    };
 });

@@ -1,2 +1,2 @@
 delete from tours
-where id = $1;
+where id = $1
