@@ -13,7 +13,7 @@ module.exports = {
     },
     getOne: function(req, res) {
         db.get_tours([req.params.id], function(err, tours) {
-            res.json(tours[0]);
+            res.json(tours);
         });
     },
     create: function(req, res) {

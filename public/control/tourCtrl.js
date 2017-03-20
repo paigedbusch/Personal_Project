@@ -1,9 +1,9 @@
 angular.module('app')
-.controller('tourCtrl', function($scope, toursSvc, $state) {
+.controller('tourCtrl', function($scope, tourSvc, $state) {
 
     $scope.updating = false;
 
-    toursSvc.getTour()
+    tourSvc.getTour()
     .then(function(response) {
         $scope.tour = response;
     });
