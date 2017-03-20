@@ -2,6 +2,7 @@ angular.module('app')
 .service('tourSvc', function($http, $stateParams) {
 
     this.getTour = function() {
+        console.log($stateParams.id)
         return $http.get('/api/tours/' + $stateParams.id)
         .then(function(response) {
             return response.data;

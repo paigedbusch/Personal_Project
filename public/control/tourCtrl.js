@@ -9,7 +9,7 @@ angular.module('app')
     });
 
     $scope.updateTour = function(tour) {
-        toursSvc.updateTour(tour)
+        tourSvc.updateTour(tour)
         .then(function(response) {
             $scope.tour = response;
             $scope.updating = false;
@@ -17,7 +17,7 @@ angular.module('app')
     };
 
     $scope.deleteTour = function() {
-        toursSvc.deleteTour()
+        tourSvc.deleteTour()
         .then(function(response) {
             $state.go('tours');
         });

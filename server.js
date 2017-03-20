@@ -20,6 +20,11 @@ var conn = massive.connectSync({connectionString: config.elephantsql})
 app.set('db', conn);
 var db = app.get('db');
 
+db.set_tables(function(err, res) {
+    if (err) return console.log(err, 'err at set_tables');
+    else console.log('tables successfully reset');
+});
+
 tourCtrl = require('./controller/tourCtrl');
 blogCtrl = require('./controller/blogCtrl');
 // userCtrl = require('./userCtrl');
@@ -36,17 +41,11 @@ app.put('/api/update_blog', blogCtrl.update);
 app.put('/api/update_tour', tourCtrl.update);
 
 app.delete('/api/delete_blog/:id', blogCtrl.delete);
-app.delete('/api/delete_tour', tourCtrl.delete);
+app.delete('/api/delete_tour/:id', tourCtrl.delete);
 
 app.listen(port, function() {
     console.log('Listening on port ', port);
 });
-
-
-// var db = app.get('db');
-// var conn = massive.connectSync({
-//   connectionString : config.elephantsql
-// });
 
 // app.use(session({
 //   resave: true, //Without this you get a constant warning about default values
@@ -55,9 +54,6 @@ app.listen(port, function() {
 // }));
 // app.use(passport.initialize());
 // app.use(passport.session());
-
-
-// app.set('db', conn);
 
 // passport.use(new localStrategy(function(username, password, done) {
 //   db.users.findOne({username: username}, function(err, user) {

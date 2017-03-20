@@ -1,4 +1,4 @@
-drop table if exists blogs;
+drop table if exists blogs, tours, users;
 
 create table blogs
 (
@@ -18,24 +18,22 @@ insert into blogs (title, content, image) values
 ('Grand View to New Hance Loop', 'Reading through lots of blogs and trip reports I found many, many backpackers who raved about the scenery they found on the New Hance to Grandview loop in the Grand Canyon.  Maggie and I completed this loop last week and were not disappointed!!! Most people travel east to west but we decided to start on the Grandview, camp at the river 2 nights, and hike out on the New Hance.  Day 1 would give us the biggest canyon mileage and the last day would end with the tough climb but then the last half would be easy road walking (unless we could hitch back to the car).', './public/image/grandview_1.jpg'),
 ('Lake Powell Packrafting', 'Last September Avery and I planned a fun 3 day, 2 night packrafting trip to Lake Powell’s south shores.  We’d launch at Wahweap Marina, paddle to whatever landmark looked most interesting and camp and explore before returning in a couple of days. We drove down from Salt Lake to Kanab the night before and camped out in town.  That’d give us a quick hour long drive in the morning with plenty of daylight to paddle and check things out.  That night it was a little chilly but by the time we reached the marina the temperature had risen considerably and we were ready to shed our layers and get in the water.  We packed up our sea kayaks and launched from the marina by late morning.  Luckily it was nearing the end of Lake Powell’s busy season so there weren’t tons of big and fast boats.  Not only is it nicer to get a little more solitude but the bigger boats can produce a wake that can be problematic for our little kayaks….especially when we’re packing all of our gear and would prefer not to capsize!!  Our stuff was tied down and in water proof sacks but you never know……!!! We headed straight across the bay to check out the shore on that side.  There weren’t too many houseboats with claims to nice campsites but we definitely wanted to paddle some more and get to the other side of the Castle Rock Cut.  We took our time though, sticking pretty close to the shore so we could stop for breaks when we wanted to and explore the land a little.  Where the walls were tall it was especially beautiful but the water bounced off the walls a little more roughly so we kept a quick pace in those areas, stopping just for a few pictures.', './public/image/lake_powell_1.jpg');
 
-drop table if exists tours;
-
 create table tours
 (
   id serial primary key,
   title text,
   content text,
   gear text,
-  prices text,
+  price text,
   image text
 );
 
-insert into tours (title, content, gear, prices, image) values
-('tour1', 'some content for the first tour', 'gear necessary for the first tour', '$1.00', 'image url first tour')
-('tour2', 'some content for the second tour', 'gear necessary for the second tour', '$1.00', 'image url second tour')
-('tour3', 'some content for the third tour', 'gear necessary for the third tour', '$1.00', 'image url third tour')
-('tour4', 'some content for the fourth tour', 'gear necessary for the fourth tour', '$1.00', 'image url fourth tour')
-('tour5', 'some content for the fifth tour', 'gear necessary for the fifth tour', '$1.00', 'image url fifth tour')
+insert into tours (title, content, gear, price, image) values
+('tour1', 'some content for the first tour', 'gear necessary for the first tour', '$1.00', 'image url first tour'),
+('tour2', 'some content for the second tour', 'gear necessary for the second tour', '$1.00', 'image url second tour'),
+('tour3', 'some content for the third tour', 'gear necessary for the third tour', '$1.00', 'image url third tour'),
+('tour4', 'some content for the fourth tour', 'gear necessary for the fourth tour', '$1.00', 'image url fourth tour'),
+('tour5', 'some content for the fifth tour', 'gear necessary for the fifth tour', '$1.00', 'image url fifth tour');
 
 create table users
 (
@@ -45,4 +43,4 @@ create table users
 );
 
 insert into users (username, password) values
-('username', 'password')
+('username', 'password');
