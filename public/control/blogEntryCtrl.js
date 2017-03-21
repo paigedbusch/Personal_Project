@@ -1,7 +1,12 @@
 angular.module('app')
-.controller('blogEntryCtrl', function($scope, blogEntrySvc, $state) {
+.controller('blogEntryCtrl', function($scope, blogEntrySvc, $state, loginSvc) {
 
     $scope.editing = false;
+
+    loginSvc.getUser()
+    .then(function(response) {
+        $scope.user = response;
+    });
 
     blogEntrySvc.getEntry()
     .then(function(response) {

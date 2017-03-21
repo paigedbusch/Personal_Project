@@ -1,7 +1,12 @@
 angular.module('app')
-.controller('tourCtrl', function($scope, tourSvc, $state) {
+.controller('tourCtrl', function($scope, tourSvc, $state, loginSvc) {
 
     $scope.updating = false;
+
+    loginSvc.getUser()
+    .then(function(response) {
+        $scope.user = response;
+    });
 
     tourSvc.getTour()
     .then(function(response) {

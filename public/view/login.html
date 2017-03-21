@@ -1,13 +1,13 @@
-<form ng-submit='submitLogin(login)'>
+<form ng-submit='submitLogin(username, password)'>
   <div>
     <label>Username:</label>
-    <input type='text' name='username' ng-model='login.username'/>
+    <input type='text' name='username' ng-model='username'/>
   </div>
   <div>
     <label>Password:</label>
-    <input type='password' name='password' ng-model='login.password'/>
+    <input type='password' name='password' ng-model='password'/>
   </div>
   <div>
-	  <button>Login</button>
+    <input type='submit' value='Log In'/>
   </div>
 </form>

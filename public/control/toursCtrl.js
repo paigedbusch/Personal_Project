@@ -1,5 +1,10 @@
 angular.module('app')
-.controller('toursCtrl', function($scope, toursSvc, $state) {
+.controller('toursCtrl', function($scope, toursSvc, $state, loginSvc) {
+
+    loginSvc.getUser()
+    .then(function(response) {
+        $scope.user = response;
+    });
 
     toursSvc.getAllTours()
     .then(function(response) {

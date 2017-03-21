@@ -9,7 +9,7 @@
         <img class='tour-img' src='{{tour.image}}'>
         <a class='tour-title' ui-sref='tour({id: tour.id})'>{{tour.title}}</a>
     </div>
-    <button ng-click='create = true' ng-show='!create'>Create New</button>
+    <button ng-click='create = true' ng-show='!create && user'>Create New</button>
 </div>
 
 <form ng-show='create'>

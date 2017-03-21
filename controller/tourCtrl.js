@@ -5,6 +5,7 @@ module.exports = {
     get: function(req, res) {
         db.get_tours(function(err, tours) {
             if (err) return console.log(err, 'err at get_tours');
+            else res.status(200).send(tours);
         });
     },
     getOne: function(req, res) {

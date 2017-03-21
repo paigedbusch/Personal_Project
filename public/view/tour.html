@@ -28,7 +28,7 @@
     <p>{{tour.price}}</p>
 </div>
 
-<button ng-click='deleteTour()' ng-show='!updating'>Delete Tour</button>
-<button ng-click='updating = true' ng-show='!updating'>Edit</button>
+<button ng-click='deleteTour()' ng-show='!updating && user'>Delete Tour</button>
+<button ng-click='updating = true' ng-show='!updating && user'>Edit</button>
 
 <footer-directive></footer-directive>

@@ -5,6 +5,7 @@ module.exports = {
     get: function(req, res) {
         db.get_blogs(function(err, blogs) {
             if (err) return console.log(err, 'err at get_blogs');
+            else res.status(200).send(blogs);
         });
     },
     getOne: function(req, res) {

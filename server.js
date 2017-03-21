@@ -80,6 +80,7 @@ passport.deserializeUser(function(user, done) {
 
 app.get('/logout', function(req, res) {
   req.logout();
+  console.log('successful logout');
   res.redirect('/');
 });
 
@@ -89,20 +90,11 @@ app.get('/auth/me', function(req, res) {
     res.status(200).send(req.user);
   } else {
     console.log('no user')
-    res.status(200).send();
+    res.status(200).send('');
   }
 });
 
-app.post('/login',
-  passport.authenticate('local', {successRedirect: '/home', failureRedirect: '/login'}), function(req, res) {
-    res.status(200).send(req.user);
+app.post('/login', passport.authenticate('local'), function(req, res) {
+        res.status(200).send(req.user);
   }
 );
-
-function isAuthed(req, res, next) {
-  if (req.user) {
-    next();
-  } else {
-    res.status(403).send({message: 'Access Denied'});
-  }
-};

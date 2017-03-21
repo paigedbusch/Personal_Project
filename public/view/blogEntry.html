@@ -18,7 +18,7 @@
     <p class='info'>{{entry.content}}</p>
 </div>
 
-<button ng-click='deleteEntry()' ng-show='!editing'>Delete Entry</button>
-<button ng-click='editing = true' ng-show='!editing'>Edit</button>
+<button ng-click='deleteEntry()' ng-show='!editing && user'>Delete Entry</button>
+<button ng-click='editing = true' ng-show='!editing && user'>Edit</button>
 
 <footer-directive></footer-directive>
