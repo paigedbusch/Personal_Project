@@ -1,5 +1,5 @@
 angular.module('app')
-.service('blogSvc', function($stateParams, $http) {
+.service('blogSvc', function($http, $stateParams) {
     
     this.getAllEntries = function() {
         return $http.get('/api/blog')
@@ -9,8 +9,10 @@ angular.module('app')
     };
 
     this.newEntry = function(entry) {
+        console.log(entry);
         return $http.post('/api/new_blog', entry)
         .then(function(response) {
+            console.log(response);
             return response.data;
         });
     };

@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('tourCtrl', function($scope, tourSvc, $state, loginSvc) {
+.controller('tourCtrl', function($scope, $state, loginSvc, tourSvc) {
 
     $scope.updating = false;
 

@@ -1,5 +1,17 @@
 <header-directive></header-directive>
 
+<div class='tour-container' ng-show='!updating'>
+    <h1 class='place'>{{tour.title}}</h1>
+    <p class='info'>{{tour.content}}</p>
+    <p>{{tour.gear}}</p>
+    <p>{{tour.price}}</p>
+    <div>{{tour.image}}</div>
+</div>
+
+<button ng-click='deleteTour()' ng-show='!updating && user'>Delete Tour</button>
+<button ng-click='updating = true' ng-show='!updating && user'>Edit</button>
+<a href='mailto:93paigedf@gmail.com?subject=Book%20My%20Tour%3A%20{{tour.title}}&body=Your%20Name%3A %0D%0A %0D%0A Dates%20Requested%3A %0D%0A %0D%0A Additional%20Questions%20or%20Information%3A'>Book Now</a>
+
 <form ng-show='updating'>
   <div>
     <label>Title:</label>
@@ -17,18 +29,12 @@
       <label>Price:</label>
       <input type='text' name='price' ng-model='tour.price'/>
   </div>
+  <div>
+    <label>Image:</label>
+    <input type='file' name='image' ng-model='tour.image'/>
+  </div>
   <button ng-click='updateTour(tour)'>Submit</button>
   <button ng-click='updating = false'>Cancel</button>
 </form>
-
-<div class='tour-container' ng-show='!updating'>
-    <h1 class='place'>{{tour.title}}</h1>
-    <p class='info'>{{tour.content}}</p>
-    <p>{{tour.gear}}</p>
-    <p>{{tour.price}}</p>
-</div>
-
-<button ng-click='deleteTour()' ng-show='!updating && user'>Delete Tour</button>
-<button ng-click='updating = true' ng-show='!updating && user'>Edit</button>
 
 <footer-directive></footer-directive>

@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('blogEntryCtrl', function($scope, blogEntrySvc, $state, loginSvc) {
+.controller('blogEntryCtrl', function($scope, $state, blogEntrySvc, loginSvc) {
 
     $scope.editing = false;
 
@@ -14,8 +14,10 @@ angular.module('app')
     });
 
     $scope.updateEntry = function(entry) {
+        console.log(entry);
         blogEntrySvc.updateEntry(entry)
         .then(function(response) {
+            console.log(response);
             $scope.entry = response;
             $scope.editing = false;
         });

@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('toursCtrl', function($scope, toursSvc, $state, loginSvc) {
+.controller('toursCtrl', function($scope, $state, loginSvc, toursSvc) {
 
     loginSvc.getUser()
     .then(function(response) {

@@ -1,5 +1,5 @@
 angular.module('app')
-.service('toursSvc', function($stateParams, $http) {
+.service('toursSvc', function($http, $stateParams) {
     
     this.getAllTours = function() {
         return $http.get('/api/tours')

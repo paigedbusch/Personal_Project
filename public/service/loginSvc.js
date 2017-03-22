@@ -1,5 +1,5 @@
 angular.module('app')
-.service('loginSvc', function($stateParams, $http) {
+.service('loginSvc', function($http, $stateParams) {
     
     this.submitLogin = function(username, password) {
         return $http.post('/login', {username: username, password: password})

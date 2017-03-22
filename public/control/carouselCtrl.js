@@ -8,23 +8,23 @@ angular.module('app')
 
     $scope.slides = [
         {
-            image: '../image/timp4.jpg',
+            image: '../image/escalante2.jpg',
             id: currIndex++
         },
         {
-            image: '../image/arches_1.jpg',
+            image: '../image/grandcanyon1.jpg',
             id: currIndex++
         },
         {
-            image: '../image/mesa_verde_1.jpg',
+            image: '../image/lakepowell6.jpg',
             id: currIndex++
         },
         {
-            image: '../image/wave_1.jpg',
+            image: '../image/narrows6.jpg',
             id: currIndex++
         },
         {
-            image: '../image/narrows1.jpg',
+            image: '../image/wave5.jpg',
             id: currIndex++
         }
     ]
@@ -35,5 +35,5 @@ angular.module('app')
 
     for (var i = 0; i < 4; i++) {
         $scope.addSlide();
-    }
+    };
 });

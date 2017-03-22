@@ -20,14 +20,14 @@ var conn = massive.connectSync({connectionString: config.elephantsql})
 app.set('db', conn);
 var db = app.get('db');
 
-db.set_tables(function(err, res) {
-    if (err) return console.log(err, 'err at set_tables');
-    else console.log('tables successfully reset');
-});
+// db.set_tables(function(err, res) {
+//     if (err) return console.log(err, 'err at set_tables');
+//     else console.log('tables successfully reset');
+// });
 
 tourCtrl = require('./controller/tourCtrl');
 blogCtrl = require('./controller/blogCtrl');
-// userCtrl = require('./controller/userCtrl');
+userCtrl = require('./controller/userCtrl');
 
 app.get('/api/blog', blogCtrl.get);
 app.get('/api/blog/:id', blogCtrl.getOne);
@@ -95,6 +95,6 @@ app.get('/auth/me', function(req, res) {
 });
 
 app.post('/login', passport.authenticate('local'), function(req, res) {
-        res.status(200).send(req.user);
-  }
+    res.status(200).send(req.user);
+}
 );

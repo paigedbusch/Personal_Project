@@ -1,5 +1,6 @@
 angular.module('app')
 .directive('logoutDirective', function () {
+    
     return {
         restrict: 'E',
         templateUrl: './directive/logoutTmpl.html',

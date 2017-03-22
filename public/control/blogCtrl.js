@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('blogCtrl', function($scope, blogSvc, $state, loginSvc) {
+.controller('blogCtrl', function($scope, $state, blogSvc, loginSvc) {
 
     loginSvc.getUser()
     .then(function(response) {
@@ -15,6 +15,7 @@ angular.module('app')
         blogSvc.newEntry(entry)
         .then(function(response) {
             $state.go('entry', {id: response.id});
-        });
+            $scope.entry = response;
+        })
     };
 });
