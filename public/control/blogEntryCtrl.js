@@ -14,11 +14,9 @@ angular.module('app')
     });
 
     $scope.updateEntry = function(entry) {
-        console.log(entry);
         blogEntrySvc.updateEntry(entry)
         .then(function(response) {
-            console.log(response);
-            $scope.entry = response;
+           // $scope.entry = response;
             $scope.editing = false;
         });
     };

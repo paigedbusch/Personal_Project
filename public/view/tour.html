@@ -5,7 +5,7 @@
     <p class='info'>{{tour.content}}</p>
     <p>{{tour.gear}}</p>
     <p>{{tour.price}}</p>
-    <div>{{tour.image}}</div>
+    <div><img src='{{tour.image}}'></div>
 </div>
 
 <button ng-click='deleteTour()' ng-show='!updating && user'>Delete Tour</button>
@@ -31,7 +31,7 @@
   </div>
   <div>
     <label>Image:</label>
-    <input type='file' name='image' ng-model='tour.image'/>
+    <input type='text' name='image' ng-model='tour.image'/>
   </div>
   <button ng-click='updateTour(tour)'>Submit</button>
   <button ng-click='updating = false'>Cancel</button>

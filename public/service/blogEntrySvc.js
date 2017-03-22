@@ -9,10 +9,8 @@ angular.module('app')
     };
 
     this.updateEntry = function(entry) {
-        console.log(entry);
         return $http.put('/api/update_blog', entry)
         .then(function(response) {
-            console.log(response);
             return response.data;
         });
     };
