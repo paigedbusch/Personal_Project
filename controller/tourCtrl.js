@@ -15,13 +15,13 @@ module.exports = {
         });
     },
     create: function(req, res) {
-        db.create_tour([req.body.title, req.body.content, req.body.gear, req.body.price, req.body.image], function(err, tours) {
+        db.create_tour([req.body.title, req.body.content, req.body.gear, req.body.price, req.body.image, req.body.tourtype], function(err, tours) {
             if (err) return console.log(err, 'err at create_tour');
             res.send(tours[0]);
         });
     },
     update: function(req, res) {
-        db.update_tour(req.body.id, req.body.title, req.body.content, req.body.gear, req.body.price, req.body.image, function(err, tours) {
+        db.update_tour(req.body.id, req.body.title, req.body.content, req.body.gear, req.body.price, req.body.image, req.body.tourtype, function(err, tours) {
             if (err) return console.log(err, 'err at update_tour');
             res.send(tours[0]);
         });

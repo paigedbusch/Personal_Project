@@ -1,4 +1,14 @@
-drop table if exists blogs, tours, users;
+drop table if exists tourtypes, tours, blogs, users;
+
+create table tourtypes
+(
+  id serial primary key,
+  type text
+);
+
+insert into tourtypes (type) values
+('single'),
+('multi');
 
 create table tours
 (
@@ -7,15 +17,16 @@ create table tours
   content text,
   gear text,
   price text,
-  image text
+  image text,
+  tourtype integer references tourtypes(id)
 );
 
-insert into tours (title, content, gear, price, image) values
-('title1', 'content1', 'gear1', 'price1', 'image1'),
-('title2', 'content2', 'gear2', 'price2', 'image2'),
-('title3', 'content3', 'gear3', 'price3', 'image3'),
-('title4', 'content4', 'gear4', 'price4', 'image4'),
-('title5', 'content5', 'gear5', 'price5', 'image5');
+insert into tours (title, content, gear, price, image, tourtype) values
+('title1', 'content1', 'gear1', 'price1', 'image1', 1),
+('title2', 'content2', 'gear2', 'price2', 'image2', 2),
+('title3', 'content3', 'gear3', 'price3', 'image3', 1),
+('title4', 'content4', 'gear4', 'price4', 'image4', 2),
+('title5', 'content5', 'gear5', 'price5', 'image5', 1);
 
 create table blogs
 (

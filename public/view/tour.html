@@ -33,6 +33,12 @@
     <label>Image:</label>
     <input type='text' name='image' ng-model='tour.image'/>
   </div>
+  <div>
+    <select name='tourtype' ng-model='tour.tourtype'>
+      <option value=1>Day Trip</option>
+      <option value=2>Multi-Day Trip</option>
+    </select>
+  </div>
   <button ng-click='updateTour(tour)'>Submit</button>
   <button ng-click='updating = false'>Cancel</button>
 </form>
