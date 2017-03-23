@@ -3,7 +3,7 @@ angular.module('app')
     
     return {
         restrict: 'E',
-        templateUrl: './directive/logoutTmpl.html',
+        templateUrl: '../public/directive/logoutTmpl.html',
         controller: function($scope, loginSvc) {
             loginSvc.getUser()
             .then(function(response) {

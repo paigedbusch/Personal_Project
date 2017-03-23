@@ -8,23 +8,23 @@ angular.module('app')
 
     $scope.slides = [
         {
-            image: '../image/escalante2.jpg',
+            image: '../public/image/escalante2.jpg',
             id: currIndex++
         },
         {
-            image: '../image/grandcanyon1.jpg',
+            image: '../public/image/grandcanyon1.jpg',
             id: currIndex++
         },
         {
-            image: '../image/lakepowell6.jpg',
+            image: '../public/image/lakepowell6.jpg',
             id: currIndex++
         },
         {
-            image: '../image/narrows6.jpg',
+            image: '../public/image/narrows6.jpg',
             id: currIndex++
         },
         {
-            image: '../image/wave5.jpg',
+            image: '../public/image/wave5.jpg',
             id: currIndex++
         }
     ]

@@ -2,6 +2,6 @@ angular.module('app')
 .directive('footerDirective', function() {
 
     return {
-        templateUrl: './directive/footerTmpl.html'
+        templateUrl: '../public/directive/footerTmpl.html'
     }
 });

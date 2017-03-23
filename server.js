@@ -12,7 +12,7 @@ const app = module.exports = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static( __dirname + '/public'));
+app.use(express.static( __dirname ));
 
 var config = require('./config');
 
@@ -27,7 +27,6 @@ var db = app.get('db');
 
 tourCtrl = require('./controller/tourCtrl');
 blogCtrl = require('./controller/blogCtrl');
-userCtrl = require('./controller/userCtrl');
 
 app.get('/api/blog', blogCtrl.get);
 app.get('/api/blog/:id', blogCtrl.getOne);

@@ -1,0 +1,113 @@
+.navbar {
+  height: 50px; }
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+a:link {
+  text-decoration: none;
+  /*color: white;*/ }
+
+a:visited {
+  text-decoration: none;
+  color: green; }
+
+a:hover {
+  text-decoration: none;
+  color: blue; }
+
+a:active {
+  text-decoration: none; }
+
+.slider {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#slides_control > div {
+  height: 200px; }
+
+img {
+  margin: auto;
+  width: 400px; }
+
+#slides_control {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  top: 20px;
+  margin-left: -200px; }
+
+.about-container {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-content: space-between; }
+
+.profile {
+  height: 300px; }
+
+.about-text {
+  height: 300px;
+  display: flex;
+  align-self: center; }
+
+.blog-entries {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.entry {
+  display: flex; }
+
+.blog-title {
+  display: flex;
+  justify-content: center; }
+
+.info {
+  display: flex;
+  justify-content: center; }
+
+.search {
+  /*position: absolute;*/ }
+
+.tours {
+  border-radius: 3px;
+  background: white;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-content: space-between; }
+
+.tour-img {
+  height: 20vw; }
+
+.tour-title {
+  /*display: below the damn picture*/ }
+
+.place {
+  display: flex;
+  justify-content: center; }
+
+ul {
+  list-style-type: none; }
+
+.footer {
+  height: 100px; }
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.media {
+  height: 100px;
+  width: 100px; }
+
+.paigeclass {
+  background: black; }

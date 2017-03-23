@@ -2,6 +2,6 @@ angular.module('app')
 .directive('headerDirective', function() {
 
     return {
-        templateUrl: './directive/headerTmpl.html'
+        templateUrl: '../public/directive/headerTmpl.html'
     }
 });
