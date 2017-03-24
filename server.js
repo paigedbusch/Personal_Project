@@ -6,7 +6,7 @@ var cors = require('cors');
 var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
 
-var port = 8080;
+var port = process.env.PORT || 8080;
 
 const app = module.exports = express();
 
