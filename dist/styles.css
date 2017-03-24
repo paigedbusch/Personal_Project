@@ -37,24 +37,31 @@ a:active {
   text-decoration: none;
   color: #404040; }
 
+#carousel .carousel-control.right {
+  background-image: none; }
+
+#carousel .carousel-control.left {
+  background-image: none; }
+
 .carousel {
   height: 500px;
   overflow: hidden; }
 
 .slider {
   height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  display: flex; }
 
 #slides_control > div {
   height: 200px; }
 
 .img-container {
-  width: 70%; }
+  width: 70%;
+  margin: auto 15% auto 15%;
+  display: flex;
+  justify-content: center;
+  align-content: center; }
 
 img {
-  margin: auto;
   max-width: 100%;
   max-height: 100%; }
 
@@ -79,9 +86,9 @@ img {
 
 .about-text {
   height: 300px;
+  width: 300px;
   display: flex;
   justify-content: center;
-  align-self: center;
   align-items: center; }
 
 .blog-entries {
