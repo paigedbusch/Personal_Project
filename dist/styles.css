@@ -1,26 +1,45 @@
-@import url("https://fonts.googleapis.com/css?family=Amatic+SC:700|Amatica+SC|Over+the+Rainbow");
+@import url("https://fonts.googleapis.com/css?family=Amatica+SC:400,700|Open+Sans");
+.title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #404040;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center; }
+
 .navbar {
-  height: 50px; }
+  background: #74CCD1;
+  font-family: "Open Sans", sans-serif;
+  color: #404040;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
 
 .links {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; }
+  font-size: 15px; }
 
 a:link {
   text-decoration: none;
-  /*color: white;*/ }
+  color: #404040; }
 
 a:visited {
   text-decoration: none;
-  color: green; }
+  color: #404040; }
 
 a:hover {
   text-decoration: none;
-  color: blue; }
+  color: #b3cccc; }
 
 a:active {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #404040; }
+
+.carousel {
+  height: 500px;
+  overflow: hidden; }
 
 .slider {
   height: 500px;
@@ -31,9 +50,13 @@ a:active {
 #slides_control > div {
   height: 200px; }
 
+.img-container {
+  width: 70%; }
+
 img {
   margin: auto;
-  width: 400px; }
+  max-width: 100%;
+  max-height: 100%; }
 
 #slides_control {
   position: absolute;
@@ -44,17 +67,22 @@ img {
 
 .about-container {
   height: 500px;
+  margin: auto 25px auto 25px;
   display: flex;
   justify-content: center;
   align-content: space-between; }
 
 .profile {
-  height: 300px; }
+  height: 300px;
+  width: 300px;
+  margin-right: 35px; }
 
 .about-text {
   height: 300px;
   display: flex;
-  align-self: center; }
+  justify-content: center;
+  align-self: center;
+  align-items: center; }
 
 .blog-entries {
   display: flex;
@@ -99,16 +127,17 @@ ul {
   list-style-type: none; }
 
 .footer {
-  height: 100px; }
+  height: 100px;
+  background-color: #404040;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .logos {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around; }
+  flex-direction: row; }
 
 .media {
-  height: 100px;
-  width: 100px; }
-
-.paigeclass {
-  background: black; }
+  height: 30px;
+  width: 30px;
+  color: #74CCD1; }
