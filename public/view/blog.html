@@ -1,7 +1,7 @@
 <header-directive></header-directive>
 
 <div class='blog-entries' ng-show='!create'>
-    <div ng-repeat='entry in entries'>
+    <div class='entry-title' ng-repeat='entry in entries'>
         <a ui-sref='entry({id: entry.id})'>{{entry.title}}</a>
     </div>
     <button ng-click='create = true' ng-show='!create && user'>Create New</button>

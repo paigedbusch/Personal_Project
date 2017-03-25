@@ -5,7 +5,7 @@
 </div>
 
 <div class='tours' ng-show='!create'>
-    <div ng-repeat='tour in tours | filter: tourFilter'>
+    <div class='tour-info' ng-repeat='tour in tours | filter: tourFilter'>
         <img class='tour-img' src='{{tour.image}}'>
         <a class='tour-title' ui-sref='tour({id: tour.id})'>{{tour.title}}</a>
     </div>

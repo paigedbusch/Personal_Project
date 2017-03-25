@@ -55,9 +55,13 @@ a:active {
     .carousel-control.left {
         background-image: none;
     }
+    .carousel-indicators {
+        display: none;
+    }
+    margin-top: 70px;
 }
 .carousel {
-    height: 500px;
+    height: 450px;
     overflow: hidden;
 }
 .slider {
@@ -88,7 +92,7 @@ img {
 
 .about-container {
     height: 500px;
-    margin: auto 25px auto 25px;
+    margin: 25px 25px -100px 25px;
     display: flex;
     justify-content: center;
     align-content: space-between;
@@ -108,14 +112,24 @@ img {
 
 // blog page
 .blog-entries {
+    height: 550px;
     display: flex;
-    justify-content: space-between;
-    align-content: center;
+    // justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
-.entry {
+// .entry-title {
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+.blog-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blog-container p {
+    width: 75%;
 }
 .blog-title {
     display: flex;
@@ -125,6 +139,14 @@ img {
     display: flex;
     justify-content: center;
 }
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.blog-images {
+    width: 500px;
+}
 
 // tours page
 .search {
@@ -133,16 +155,28 @@ img {
 .tours {
     border-radius: 3px;
     background: white;
-    height: 300px;
+    // height: 300px;
     width: 100%;
     display: flex;
-    align-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+.tour-info {
+    height: 400px;
+    margin-top: 25px;
+}
+
 .tour-img {
-    height: 20vw;
+    height: 325px;
+    width: 325px;
+    display: flex;
+    justify-content: space-around;
 }
 .tour-title {
-    /*display: below the damn picture*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px auto 10px auto;
 }
 .place {
     display: flex;
@@ -164,7 +198,6 @@ ul {
     align-items: center;
 }
 .logos {
-    display: flex;
     flex-direction: row;
 }
 .media {

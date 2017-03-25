@@ -3,31 +3,33 @@
 <div class='blog-container' ng-show='!editing'>
     <h1 class='blog-title'>{{entry.title}}</h1>
     <p class='info'>{{entry.contenta}}</p>
-    <div>
-        <img src={{entry.imagea}}>
-        {{entry.descriptiona}}
-    </div>
-    <div>
-        <img src={{entry.imageb}}>
-        {{entry.descriptionb}}
-    </div>
-    <p>{{entry.contentb}}</p>
-    <div>
-        <img src={{entry.imagec}}>
-        {{entry.descriptionc}}
-    </div>
-    <div>
-        <img src={{entry.imaged}}>
-        {{entry.descriptiond}}
-    </div>
-    <p>{{entry.contentc}}</p>
-    <div>
-        <img src={{entry.imagee}}>
-        {{entry.descriptione}}
-    </div>
-    <div>
-        <img ng-src={{entry.imagef}}>
-        {{entry.descriptionf}}
+    <div class='image-container'>
+        <div class='blog-images'>
+            <img src={{entry.imagea}}>
+            {{entry.descriptiona}}
+        </div>
+        <div class='blog-images'>
+            <img src={{entry.imageb}}>
+            {{entry.descriptionb}}
+        </div>
+        <p>{{entry.contentb}}</p>
+        <div class='blog-images'>
+            <img src={{entry.imagec}}>
+            {{entry.descriptionc}}
+        </div>
+        <div class='blog-images'>
+            <img src={{entry.imaged}}>
+            {{entry.descriptiond}}
+        </div>
+        <p>{{entry.contentc}}</p>
+        <div class='blog-images'>
+            <img src={{entry.imagee}}>
+            {{entry.descriptione}}
+        </div>
+        <div class='blog-images'>
+            <img ng-src={{entry.imagef}}>
+            {{entry.descriptionf}}
+        </div>
     </div>
 </div>
 
