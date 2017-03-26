@@ -2,12 +2,16 @@
     <div class='body'>
         <header-directive></header-directive>
 
-        <div class='blog-entries' ng-show='!create'>
+        <div class="blog-entries">
+            <card-directive item="entry" ng-repeat="entry in entries"></card-directive>
+        </div>
+        <button ng-click='create = true' ng-show='!create && user'>Create New</button>
+        <!--<div class='blog-entries' ng-show='!create'>
             <div ng-repeat='entry in entries'>
                 <a ui-sref='entry({id: entry.id})'>{{entry.title}}</a>
             </div>
             <button ng-click='create = true' ng-show='!create && user'>Create New</button>
-        </div>
+        </div>-->
 
         <form ng-show='create'>
             <div>

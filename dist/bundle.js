@@ -298,6 +298,18 @@ angular.module('app').service('toursSvc', function ($http, $stateParams) {
 });
 'use strict';
 
+angular.module('app').directive('cardDirective', function () {
+
+    return {
+        restrict: 'E',
+        scope: {
+            item: '='
+        },
+        templateUrl: '../public/directive/cardTmpl.html'
+    };
+});
+'use strict';
+
 angular.module('app').directive('carouselDirective', function () {
     return {
         restrict: 'E',

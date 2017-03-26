@@ -19,7 +19,11 @@ body {
 }
 .body {
     padding: 10px;
-    padding-bottom: 100px;
+    padding-bottom: 0;
+}
+
+.center-text {
+    text-align: center;
 }
 
 // home view //
@@ -129,14 +133,43 @@ img {
     align-items: center;
 }
 
+// card //
+.card {
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+
+    .card-img {
+        overflow: hidden;
+        height: 75%;
+        position: relative;
+    }
+
+    .card-title {
+        z-index: 5;
+        position: absolute;
+        bottom: 1px;
+        left: 5px;
+        color: white;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
 // blog page //
 .blog-entries {
-    height: 550px;
-    margin-bottom: 165px;
+    /* padding-left: 2px; */
+    /* width: 92%; */
+    /* margin: auto; */
+    /* padding: 20px; */
+    overflow: auto;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 // blog entry page //
@@ -241,8 +274,6 @@ ul {
 .footer {
     height: 100px;
     width: 100%;
-    position: absolute;
-    bottom: 0;
     background-color: $primary-color;
     display: flex;
     justify-content: center;
