@@ -6,6 +6,7 @@ body {
 
 .container {
   min-height: 100%;
+  width: 80%;
   position: relative; }
 
 .body {
@@ -13,7 +14,7 @@ body {
   padding-bottom: 100px; }
 
 .title {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Amatica SC", cursive;
   font-weight: 700;
   color: #404040;
   padding-bottom: 20px;
@@ -51,7 +52,7 @@ a:active {
   color: #404040; }
 
 #carousel {
-  margin-top: 70px; }
+  margin-top: 10px; }
   #carousel .carousel-control.right {
     background-image: none; }
   #carousel .carousel-control.left {
@@ -89,8 +90,10 @@ img {
   margin-left: -200px; }
 
 .about-container {
-  height: 500px;
-  margin: 25px 25px -100px 25px;
+  height: 365px;
+  margin-top: 50px;
+  margin-right: 25px;
+  margin-left: 25px;
   display: flex;
   justify-content: center;
   align-content: space-between; }
@@ -103,29 +106,35 @@ img {
 .about-text {
   height: 300px;
   width: 300px;
+  font-family: "Open Sans", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center; }
 
 .blog-entries {
   height: 550px;
+  margin-bottom: 165px;
   display: flex;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  justify-content: space-around; }
 
 .blog-container {
+  margin-bottom: 85px;
   display: flex;
   flex-direction: column;
   align-items: center; }
 
 .blog-container p {
-  width: 75%; }
+  width: 75%;
+  margin-top: 55px; }
 
 .blog-title {
   display: flex;
   justify-content: center; }
 
 .info {
+  margin-top: 15px;
   display: flex;
   justify-content: center; }
 
@@ -135,17 +144,26 @@ img {
   flex-wrap: wrap; }
 
 .blog-images {
-  width: 500px; }
+  width: 500px;
+  height: 500px;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+.image-description {
+  margin-top: 10px; }
 
 .search {
-  /*position: absolute;*/ }
+  position: absolute; }
 
 .tours {
-  border-radius: 3px;
-  background: white;
   width: 100%;
+  margin-top: 45px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap; }
 
 .tour-info {
@@ -164,12 +182,31 @@ img {
   justify-content: center;
   margin: 10px auto 10px auto; }
 
+.tour-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.tour-container p {
+  margin-left: 25px;
+  margin-right: 25px; }
+
 .place {
   display: flex;
   justify-content: center; }
 
+.tour-image {
+  width: 650px;
+  height: 650px; }
+
 ul {
   list-style-type: none; }
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 340px; }
 
 .footer {
   height: 100px;

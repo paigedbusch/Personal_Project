@@ -5,9 +5,11 @@
     <div class='tour-container' ng-show='!updating'>
         <h1 class='place'>{{tour.title}}</h1>
         <p class='info'>{{tour.content}}</p>
-        <p>{{tour.gear}}</p>
-        <p>{{tour.price}}</p>
-        <div><img src='{{tour.image}}'></div>
+        <p>Necessary Gear: {{tour.gear}}</p><br>
+        <p>Pricing: {{tour.price}}</p><br>
+        <div class='tour-image'>
+          <img src='{{tour.image}}'>
+        </div>
     </div>
 
     <button ng-click='deleteTour()' ng-show='!updating && user'>Delete Tour</button>

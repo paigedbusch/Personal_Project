@@ -14,6 +14,7 @@ body {
 }
 .container {
     min-height: 100%;
+    width: 80%;
     position: relative;
 }
 .body {
@@ -23,7 +24,7 @@ body {
 
 // home view //
 .title {
-    font-family: $secondary-font;
+    font-family: $primary-font;
     font-weight: $primary-weight;
     color: $primary-color;
     padding-bottom: 20px;
@@ -72,7 +73,7 @@ a:active {
     .carousel-indicators {
         display: none;
     }
-    margin-top: 70px;
+    margin-top: 10px;
 }
 .carousel {
     height: 450px;
@@ -106,8 +107,10 @@ img {
 
 //about section //
 .about-container {
-    height: 500px;
-    margin: 25px 25px -100px 25px;
+    height: 365px;
+    margin-top: 50px;
+    margin-right: 25px;
+    margin-left: 25px;
     display: flex;
     justify-content: center;
     align-content: space-between;
@@ -120,6 +123,7 @@ img {
 .about-text {
     height: 300px;
     width: 300px;
+    font-family: $secondary-font;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,30 +132,30 @@ img {
 // blog page //
 .blog-entries {
     height: 550px;
+    margin-bottom: 165px;
     display: flex;
-    // justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    justify-content: space-around;
 }
-// .entry-title {
-//     display: flex;
-//     justify-content: space-between;
-// }
 
 // blog entry page //
 .blog-container {
+    margin-bottom: 85px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .blog-container p {
     width: 75%;
+    margin-top: 55px;
 }
 .blog-title {
     display: flex;
     justify-content: center;
 }
 .info {
+    margin-top: 15px;
     display: flex;
     justify-content: center;
 }
@@ -162,19 +166,27 @@ img {
 }
 .blog-images {
     width: 500px;
+    height: 500px;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.image-description {
+    margin-top: 10px;
 }
 
 // tours page //
 .search {
-    /*position: absolute;*/
+    position: absolute;
 }
 .tours {
-    border-radius: 3px;
-    background: white;
-    // height: 300px;
     width: 100%;
+    margin-top: 45px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 .tour-info {
@@ -196,25 +208,36 @@ img {
 }
 
 // tour entry page //
-// .tour-container {
-
-// }
+.tour-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tour-container p {
+    margin-left: 25px;
+    margin-right: 25px;
+}
 .place {
     display: flex;
     justify-content: center;
 }
-// .info {
+.tour-image {
+    width: 650px;
+    height: 650px;
+}
 
-// }
-
-// contact page
+// contact page //
 ul {
     list-style-type: none;
 }
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 340px;
+}
 
-
-
-// footer
+// footer //
 .footer {
     height: 100px;
     width: 100%;
