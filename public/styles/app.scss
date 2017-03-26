@@ -7,7 +7,21 @@ $secondary-weight: 400;
 $primary-color: #404040;
 $secondary-color: #74CCD1;
 
-// home view
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.container {
+    min-height: 100%;
+    position: relative;
+}
+.body {
+    padding: 10px;
+    padding-bottom: 100px;
+}
+
+// home view //
 .title {
     font-family: $secondary-font;
     font-weight: $primary-weight;
@@ -90,6 +104,7 @@ img {
     margin-left: -200px;
 }
 
+//about section //
 .about-container {
     height: 500px;
     margin: 25px 25px -100px 25px;
@@ -110,7 +125,7 @@ img {
     align-items: center;
 }
 
-// blog page
+// blog page //
 .blog-entries {
     height: 550px;
     display: flex;
@@ -123,6 +138,7 @@ img {
 //     justify-content: space-between;
 // }
 
+// blog entry page //
 .blog-container {
     display: flex;
     flex-direction: column;
@@ -148,7 +164,7 @@ img {
     width: 500px;
 }
 
-// tours page
+// tours page //
 .search {
     /*position: absolute;*/
 }
@@ -178,20 +194,32 @@ img {
     justify-content: center;
     margin: 10px auto 10px auto;
 }
+
+// tour entry page //
+// .tour-container {
+
+// }
 .place {
     display: flex;
     justify-content: center;
 }
+// .info {
 
+// }
+
+// contact page
 ul {
     list-style-type: none;
 }
 
-// contact page
+
 
 // footer
 .footer {
     height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
     background-color: $primary-color;
     display: flex;
     justify-content: center;

@@ -1,46 +1,50 @@
-<header-directive></header-directive>
+<div class='container'>
+  <div class='body'>
+    <header-directive></header-directive>
 
-<div class='tour-container' ng-show='!updating'>
-    <h1 class='place'>{{tour.title}}</h1>
-    <p class='info'>{{tour.content}}</p>
-    <p>{{tour.gear}}</p>
-    <p>{{tour.price}}</p>
-    <div><img src='{{tour.image}}'></div>
+    <div class='tour-container' ng-show='!updating'>
+        <h1 class='place'>{{tour.title}}</h1>
+        <p class='info'>{{tour.content}}</p>
+        <p>{{tour.gear}}</p>
+        <p>{{tour.price}}</p>
+        <div><img src='{{tour.image}}'></div>
+    </div>
+
+    <button ng-click='deleteTour()' ng-show='!updating && user'>Delete Tour</button>
+    <button ng-click='updating = true' ng-show='!updating && user'>Edit</button>
+    <a href='mailto:93paigedf@gmail.com?subject=Book%20My%20Tour%3A%20{{tour.title}}&body=Your%20Name%3A %0D%0A %0D%0A Dates%20Requested%3A %0D%0A %0D%0A Additional%20Questions%20or%20Information%3A'>Book Now</a>
+
+    <form ng-show='updating'>
+      <div>
+        <label>Title:</label>
+        <input type='text' name='title' ng-model='tour.title'/>
+      </div>
+      <div>
+        <label>Content:</label>
+        <textarea type='text' name='content' ng-model='tour.content'></textarea>
+      </div>
+      <div>
+          <label>Gear:</label>
+          <textarea type='text' name='gear' ng-model='tour.gear'></textarea>
+      </div>
+      <div>
+          <label>Price:</label>
+          <input type='text' name='price' ng-model='tour.price'/>
+      </div>
+      <div>
+        <label>Image:</label>
+        <input type='text' name='image' ng-model='tour.image'/>
+      </div>
+      <div>
+        <select name='tourtype' ng-model='tour.tourtype'>
+          <option value=1>Day Trip</option>
+          <option value=2>Multi-Day Trip</option>
+        </select>
+      </div>
+      <button ng-click='updateTour(tour)'>Submit</button>
+      <button ng-click='updating = false'>Cancel</button>
+    </form>
+
+    <footer-directive></footer-directive>
+  </div>
 </div>
-
-<button ng-click='deleteTour()' ng-show='!updating && user'>Delete Tour</button>
-<button ng-click='updating = true' ng-show='!updating && user'>Edit</button>
-<a href='mailto:93paigedf@gmail.com?subject=Book%20My%20Tour%3A%20{{tour.title}}&body=Your%20Name%3A %0D%0A %0D%0A Dates%20Requested%3A %0D%0A %0D%0A Additional%20Questions%20or%20Information%3A'>Book Now</a>
-
-<form ng-show='updating'>
-  <div>
-    <label>Title:</label>
-    <input type='text' name='title' ng-model='tour.title'/>
-  </div>
-  <div>
-    <label>Content:</label>
-    <textarea type='text' name='content' ng-model='tour.content'></textarea>
-  </div>
-  <div>
-      <label>Gear:</label>
-      <textarea type='text' name='gear' ng-model='tour.gear'></textarea>
-  </div>
-  <div>
-      <label>Price:</label>
-      <input type='text' name='price' ng-model='tour.price'/>
-  </div>
-  <div>
-    <label>Image:</label>
-    <input type='text' name='image' ng-model='tour.image'/>
-  </div>
-  <div>
-    <select name='tourtype' ng-model='tour.tourtype'>
-      <option value=1>Day Trip</option>
-      <option value=2>Multi-Day Trip</option>
-    </select>
-  </div>
-  <button ng-click='updateTour(tour)'>Submit</button>
-  <button ng-click='updating = false'>Cancel</button>
-</form>
-
-<footer-directive></footer-directive>

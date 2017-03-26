@@ -1,90 +1,94 @@
-<header-directive></header-directive>
+<div class='container'>
+    <div class='body'>
+        <header-directive></header-directive>
 
-<div class='blog-container' ng-show='!editing'>
-    <h1 class='blog-title'>{{entry.title}}</h1>
-    <p class='info'>{{entry.contenta}}</p>
-    <div class='image-container'>
-        <div class='blog-images'>
-            <img src={{entry.imagea}}>
-            {{entry.descriptiona}}
+        <div class='blog-container' ng-show='!editing'>
+            <h1 class='blog-title'>{{entry.title}}</h1>
+            <p class='info'>{{entry.contenta}}</p>
+            <div class='image-container'>
+                <div class='blog-images'>
+                    <img src={{entry.imagea}}>
+                    {{entry.descriptiona}}
+                </div>
+                <div class='blog-images'>
+                    <img src={{entry.imageb}}>
+                    {{entry.descriptionb}}
+                </div>
+                <p>{{entry.contentb}}</p>
+                <div class='blog-images'>
+                    <img src={{entry.imagec}}>
+                    {{entry.descriptionc}}
+                </div>
+                <div class='blog-images'>
+                    <img src={{entry.imaged}}>
+                    {{entry.descriptiond}}
+                </div>
+                <p>{{entry.contentc}}</p>
+                <div class='blog-images'>
+                    <img src={{entry.imagee}}>
+                    {{entry.descriptione}}
+                </div>
+                <div class='blog-images'>
+                    <img ng-src={{entry.imagef}}>
+                    {{entry.descriptionf}}
+                </div>
+            </div>
         </div>
-        <div class='blog-images'>
-            <img src={{entry.imageb}}>
-            {{entry.descriptionb}}
+
+        <button ng-click='deleteEntry()' ng-show='!editing && user'>Delete Entry</button>
+        <button ng-click='editing = true' ng-show='!editing && user'>Edit</button>
+
+        <form ng-show='editing'>
+        <div>
+            <label>Title:</label>
+            <input type='text' name='title' ng-model='entry.title'/>
         </div>
-        <p>{{entry.contentb}}</p>
-        <div class='blog-images'>
-            <img src={{entry.imagec}}>
-            {{entry.descriptionc}}
+        <div>
+            <label>Content:</label>
+            <textarea type='text' name='contentA' ng-model='entry.contenta'></textarea>
         </div>
-        <div class='blog-images'>
-            <img src={{entry.imaged}}>
-            {{entry.descriptiond}}
+        <div>
+            <label>Image:</label>
+            <input type='text' name='imageA' ng-model='entry.imagea'/>
+            <input type='text' name='descriptionA' ng-model='entry.descriptiona'/>
         </div>
-        <p>{{entry.contentc}}</p>
-        <div class='blog-images'>
-            <img src={{entry.imagee}}>
-            {{entry.descriptione}}
+        <div>
+            <label>Image:</label>
+            <input type='text' name='imageB' ng-model='entry.imageb'/>
+            <input type='text' name='descriptionB' ng-model='entry.descriptionb'/>
         </div>
-        <div class='blog-images'>
-            <img ng-src={{entry.imagef}}>
-            {{entry.descriptionf}}
+        <div>
+            <label>Content:</label>
+            <textarea type='text' name='contentB' ng-model='entry.contentb'></textarea>
         </div>
+        <div>
+            <label>Image:</label>
+            <input type='text' name='imageC' ng-model='entry.imagec'/>
+            <input type='text' name='descriptionC' ng-model='entry.descriptionc'/>
+        </div>
+        <div>
+            <label>Image:</label>
+            <input type='text' name='imageD' ng-model='entry.imaged'/>
+            <input type='text' name='descriptionD' ng-model='entry.descriptiond'/>
+        </div>
+        <div>
+            <label>Content:</label>
+            <textarea type='text' name='contentC' ng-model='entry.contentc'></textarea>
+        </div>
+        <div>
+            <label>Image:</label>
+            <input type='text' name='imageE' ng-model='entry.imagee'/>
+            <input type='text' name='descriptionE' ng-model='entry.descriptione'/>
+        </div>
+        <div>
+            <label>Image:</label>
+            <input type='text' name='imageF' ng-model='entry.imagef'/>
+            <input type='text' name='descriptionF' ng-model='entry.descriptionf'/>
+        </div>
+        <button ng-click='updateEntry(entry)'>Submit</button>
+        <button ng-click='editing = false'>Cancel</button>
+        </form>
+
+        <footer-directive></footer-directive>
     </div>
 </div>
-
-<button ng-click='deleteEntry()' ng-show='!editing && user'>Delete Entry</button>
-<button ng-click='editing = true' ng-show='!editing && user'>Edit</button>
-
-<form ng-show='editing'>
-  <div>
-    <label>Title:</label>
-    <input type='text' name='title' ng-model='entry.title'/>
-  </div>
-  <div>
-      <label>Content:</label>
-      <textarea type='text' name='contentA' ng-model='entry.contenta'></textarea>
-  </div>
-  <div>
-      <label>Image:</label>
-      <input type='text' name='imageA' ng-model='entry.imagea'/>
-      <input type='text' name='descriptionA' ng-model='entry.descriptiona'/>
-  </div>
-  <div>
-      <label>Image:</label>
-      <input type='text' name='imageB' ng-model='entry.imageb'/>
-      <input type='text' name='descriptionB' ng-model='entry.descriptionb'/>
-  </div>
-  <div>
-      <label>Content:</label>
-      <textarea type='text' name='contentB' ng-model='entry.contentb'></textarea>
-  </div>
-  <div>
-      <label>Image:</label>
-      <input type='text' name='imageC' ng-model='entry.imagec'/>
-      <input type='text' name='descriptionC' ng-model='entry.descriptionc'/>
-  </div>
-  <div>
-      <label>Image:</label>
-      <input type='text' name='imageD' ng-model='entry.imaged'/>
-      <input type='text' name='descriptionD' ng-model='entry.descriptiond'/>
-  </div>
-  <div>
-      <label>Content:</label>
-      <textarea type='text' name='contentC' ng-model='entry.contentc'></textarea>
-  </div>
-  <div>
-      <label>Image:</label>
-      <input type='text' name='imageE' ng-model='entry.imagee'/>
-      <input type='text' name='descriptionE' ng-model='entry.descriptione'/>
-  </div>
-  <div>
-      <label>Image:</label>
-      <input type='text' name='imageF' ng-model='entry.imagef'/>
-      <input type='text' name='descriptionF' ng-model='entry.descriptionf'/>
-  </div>
-  <button ng-click='updateEntry(entry)'>Submit</button>
-  <button ng-click='editing = false'>Cancel</button>
-</form>
-
-<footer-directive></footer-directive>

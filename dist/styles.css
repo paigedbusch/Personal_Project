@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Amatica+SC:400,700|Open+Sans");
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+.container {
+  min-height: 100%;
+  position: relative; }
+
+.body {
+  padding: 10px;
+  padding-bottom: 100px; }
+
 .title {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
@@ -160,6 +173,9 @@ ul {
 
 .footer {
   height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   background-color: #404040;
   display: flex;
   justify-content: center;
