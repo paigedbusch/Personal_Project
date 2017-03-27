@@ -13,6 +13,7 @@
     </div>
 
     <div class="card-action">
-        <a ui-sref='entry({id: item.id})'>More Information</a>
+        <a ng-if="item.hasOwnProperty('imagec')" ui-sref='entry({id: item.id})'>More Information</a>
+        <a ng-if="item.hasOwnProperty('image')" ui-sref='tour({id: item.id})'>More Information</a>
     </div>
 </div>
