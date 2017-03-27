@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Amatica+SC:400,700|Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Oswald");
 body {
   margin: 0;
   padding: 0;
-  height: 100%; }
+  height: 100%;
+  font-family: "Oswald", sans-serif !important; }
 
 .container {
   min-height: 100%;
@@ -17,16 +18,14 @@ body {
   text-align: center; }
 
 .title {
-  font-family: "Amatica SC", cursive;
-  font-weight: 700;
   color: #404040;
   padding-bottom: 20px;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  text-transform: uppercase; }
 
 .navbar {
   background: #74CCD1;
-  font-family: "Open Sans", sans-serif;
   color: #404040;
   height: 50px;
   display: flex;
@@ -109,7 +108,6 @@ img {
 .about-text {
   height: 300px;
   width: 300px;
-  font-family: "Open Sans", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center; }

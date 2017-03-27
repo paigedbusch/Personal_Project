@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Amatica+SC:400,700|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
-$primary-font: 'Amatica SC', cursive;
-$secondary-font: 'Open Sans', sans-serif;
+$primary-font: 'Oswald', sans-serif;
 $primary-weight: 700;
 $secondary-weight: 400;
 $primary-color: #404040;
@@ -11,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: $primary-font !important;
 }
 .container {
     min-height: 100%;
@@ -28,17 +28,15 @@ body {
 
 // home view //
 .title {
-    font-family: $primary-font;
-    font-weight: $primary-weight;
     color: $primary-color;
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
+    text-transform: uppercase;
 }
 
 .navbar {
     background: #74CCD1;
-    font-family: $secondary-font;
     color: $primary-color;
     height: 50px;
     display: flex;
@@ -127,7 +125,6 @@ img {
 .about-text {
     height: 300px;
     width: 300px;
-    font-family: $secondary-font;
     display: flex;
     justify-content: center;
     align-items: center;
