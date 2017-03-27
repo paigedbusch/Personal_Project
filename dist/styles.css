@@ -115,23 +115,31 @@ img {
   align-items: center; }
 
 .card {
-  width: 300px;
-  height: 300px;
+  width: 275px;
+  height: 275px;
   float: left;
   margin: 10px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
   .card .card-img {
     overflow: hidden;
-    height: 75%;
+    height: 225px;
     position: relative; }
   .card .card-title {
-    z-index: 5;
     position: absolute;
-    bottom: 1px;
-    left: 5px;
-    color: white; }
-  .card img {
-    width: 100%; }
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 16px; }
+  .card .card-action {
+    height: 50px; }
+    .card .card-action a {
+      line-height: 50px;
+      margin-left: 10px;
+      color: #FFAB40;
+      transition: 0.5s; }
+      .card .card-action a:hover {
+        color: #74CCD1;
+        text-decoration: none; }
 
 .blog-entries {
   /* padding-left: 2px; */
