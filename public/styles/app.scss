@@ -21,7 +21,6 @@ body {
     padding: 10px;
     padding-bottom: 0;
 }
-
 .center-text {
     text-align: center;
 }
@@ -143,7 +142,6 @@ img {
         height: 225px;
         position: relative;
     }
-
     .card-title {
         position: absolute;
         bottom: 10px;
@@ -151,20 +149,13 @@ img {
         color: white;
         font-size: 16px;
     }
-
-    // img {
-    //     width: 100%;
-    // }
-
     .card-action {
         height: 50px;
-
         a {
             line-height: 50px;
             margin-left: 10px;
             color: #FFAB40;
             transition: 0.5s;
-
             &:hover {
                 color: #74CCD1;
                 text-decoration: none;
@@ -175,10 +166,6 @@ img {
 
 // blog page //
 .blog-entries {
-    /* padding-left: 2px; */
-    /* width: 92%; */
-    /* margin: auto; */
-    /* padding: 20px; */
     overflow: auto;
     display: flex;
     justify-content: center;
@@ -310,4 +297,33 @@ ul {
     height: 30px;
     width: 30px;
     color: $secondary-color;
+}
+
+// login //
+.login-container {
+    height: 100%;
+    width: 100%;
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+}
+.login {
+    border: 1px solid $primary-color;
+    background-color: $secondary-color;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 165px;
+    width: 275px;
+}
+.username {
+    margin-bottom: 5px;
+}
+.password {
+    margin-bottom: 12px;
+}
+.login-button {
+    border-radius: 3px;
 }

@@ -7,13 +7,7 @@
         </div>
 
         <div class='tours' ng-show='!create'>
-
-            <card-directive item="tour" ng-repeat="tour in tours | filter: tourFilter"></card-directive>
-
-            <!--<div class='tour-info' ng-repeat='tour in tours | filter: tourFilter'>
-                <img class='tour-img' src='{{tour.image}}'>
-                <a class='tour-title' ui-sref='tour({id: tour.id})'>{{tour.title}}</a>
-            </div>-->
+            <card-directive item='tour' ng-repeat='tour in tours | filter: tourFilter'></card-directive>
         </div>
         <button ng-click='create = true' ng-show='!create && user'>Create New</button>
 

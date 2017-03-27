@@ -36,11 +36,6 @@ gulp.task('clean', function (cb) {
   });
 });
 
-// gulp.task('build-html', function () {
-//   return gulp.src([paths.htmlFiles, paths.indexFiles])
-//     .pipe(gulp.dest(paths.dist))
-// });
-
 gulp.task('build-js', function () {
   return gulp.src(paths.jsSource)
     .pipe(sourcemaps.init())
@@ -49,7 +44,6 @@ gulp.task('build-js', function () {
       presets: ['es2015']
     }))
     .pipe(concat('bundle.js'))
-    //   .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.dist));
 });

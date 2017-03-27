@@ -1,18 +1,17 @@
-<div class="card">
-    <div class="card-img" 
+<div class='card'>
+    <div class='card-img' 
     ng-if="item.hasOwnProperty('imagec')"
     style="background: url('{{item.imagec}}') no-repeat; background-position: center; background-size: cover;">
-        <!--<img ng-src="{{item.imagec}}" />-->
-        <span class="card-title">{{item.title}}</span>
+        <span class='card-title'>{{item.title}}</span>
     </div>
 
     <div ng-if="item.hasOwnProperty('image')"
-        class="card-img"
+        class='card-img'
         style="background: url('{{item.image}}') no-repeat; background-position: center; background-size: cover;">
-        <span class="card-title">{{item.title}}</span>
+        <span class='card-title'>{{item.title}}</span>
     </div>
 
-    <div class="card-action">
+    <div class='card-action'>
         <a ng-if="item.hasOwnProperty('imagec')" ui-sref='entry({id: item.id})'>More Information</a>
         <a ng-if="item.hasOwnProperty('image')" ui-sref='tour({id: item.id})'>More Information</a>
     </div>

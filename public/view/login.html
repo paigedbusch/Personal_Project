@@ -1,15 +1,15 @@
-<div>
-  <form ng-submit='submitLogin(username, password)'>
-    <div>
-      <label>Username:</label>
-      <input type='text' name='username' ng-model='username'/>
-    </div>
-    <div>
-      <label>Password:</label>
-      <input type='password' name='password' ng-model='password'/>
-    </div>
-    <div>
-      <input type='submit' value='Log In'/>
-    </div>
-  </form>
+<div class='login-container'>
+  <div class='login'>
+    <form ng-submit='submitLogin(username, password)'>
+      <div class='username'>
+        <input type='text' name='username' ng-model='username' placeholder='Username'/>
+      </div>
+      <div class='password'>
+        <input type='password' name='password' ng-model='password' placeholder='Password'/>
+      </div>
+      <div class='login-button'>
+        <input type='submit' value='Log In'/>
+      </div>
+    </form>
+  </div>
 </div>

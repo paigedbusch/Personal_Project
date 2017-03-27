@@ -1,7 +1,6 @@
 angular.module('app')
 .directive('cardDirective', function() {
 
-
     return {
         restrict: 'E',
         scope: {
@@ -9,4 +8,4 @@ angular.module('app')
         },
         templateUrl: '../public/directive/cardTmpl.html'
     }
-})
+});
